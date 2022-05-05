@@ -1,0 +1,7 @@
+{
+  "name": "Histamin Tracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
