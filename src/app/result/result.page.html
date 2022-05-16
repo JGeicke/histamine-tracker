@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>{{this.openFoodFacts.getScannedProductName()}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <ion-icon *ngIf="this.openFoodFacts.scannedHistaminFreeProduct" name="thumbs-up-sharp" class="ion-margin-top c-icon" color="success"></ion-icon>
+        <ion-icon *ngIf="!this.openFoodFacts.scannedHistaminFreeProduct" name="thumbs-down-sharp" class="ion-margin-top c-icon" color="danger"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p *ngIf="this.openFoodFacts.scannedHistaminFreeProduct">
+          <b>Kein Histamin enthalten!</b>
+        </p>
+        <p *ngIf="!this.openFoodFacts.scannedHistaminFreeProduct">
+          <b>Kann Histamin enthalten!</b>
+        </p>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
