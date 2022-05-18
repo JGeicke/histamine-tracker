@@ -1,14 +1,21 @@
-<div class="ion-text-center">
-  <ion-row class="ion-text-center">
-    <ion-col>
+<div class="ion-text-center" [style.background]="this.openFoodFacts.scanActive ? '#00000000': '#fff'">
+  <div *ngIf="!this.openFoodFacts.scanActive">
+    <ion-row class="ion-text-center">
+      <ion-col>
         <ion-icon class="c-camera-icon" name="camera-outline"></ion-icon>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <ion-button (click)="startScan()">
-        Start Scanning...
-      </ion-button>
-    </ion-col>
-  </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="startScan()">
+          Start Scanning...
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
 </div>
+<div class="c-scan-area" *ngIf="this.openFoodFacts.scanActive"></div>
+<div *ngIf="this.openFoodFacts.scanActive">
+  <ion-button class="c-stop-scan-button" (click)="stopScanner()">Stop Scan</ion-button>
+</div>
+<div class="c-scan-area" *ngIf="this.openFoodFacts.scanActive"></div>

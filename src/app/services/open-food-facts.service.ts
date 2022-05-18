@@ -6,10 +6,11 @@ import {HttpClient} from '@angular/common/http';
 })
 export class OpenFoodFactsService {
 
+  public scanActive;
+
+  public successfulScan;
   public scannedHistaminFreeProduct = false;
-  private testCode = '40144382';
   private scannedProductName = '';
-  //private testCode = '4017100370007';
 
   private histaminFood = ['strawberries, raspberries','acid', 'lemon', 'orange', 'citrus', 'banana',
                           'pineapple', 'kiwi', 'pear', 'papaya', 'guava'];
@@ -20,12 +21,20 @@ export class OpenFoodFactsService {
     return this.scannedProductName === undefined ? '':this.scannedProductName;
   }
 
-  public getIngridients(){
+  public getIngredients(barcode: string){
+    // TODO: error handling
     return new Promise((resolve, reject) => {
-      const promise = this.httpClient.get('https://world.openfoodfacts.org/api/v2/product/'+this.testCode,
+      const promise = this.httpClient.get('https://world.openfoodfacts.org/api/v2/product/'+barcode,
         {observe: 'body', responseType: 'text'}).toPromise();
       promise.then((data) => {
         const response = JSON.parse(data);
+
+        //check if product was found in OpenFoodFacts database
+        this.successfulScan = response.status;
+        if(!this.successfulScan){
+          resolve(0);
+        }
+
         const ingredients = response.product.ingredients;
 
         // get product name

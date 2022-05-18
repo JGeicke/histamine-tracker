@@ -2,5 +2,6 @@
 	"appId": "com.example.HistaminTracker",
 	"appName": "Histamin Tracker",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+  "server.cleartext": true
 }

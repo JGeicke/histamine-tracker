@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header *ngIf="openFoodFacts.successfulScan">
   <ion-toolbar class="ion-text-center">
     <ion-title>{{this.openFoodFacts.getScannedProductName()}}</ion-title>
   </ion-toolbar>
@@ -8,17 +8,21 @@
   <div class="ion-text-center">
     <ion-row>
       <ion-col>
-        <ion-icon *ngIf="this.openFoodFacts.scannedHistaminFreeProduct" name="thumbs-up-sharp" class="ion-margin-top c-icon" color="success"></ion-icon>
-        <ion-icon *ngIf="!this.openFoodFacts.scannedHistaminFreeProduct" name="thumbs-down-sharp" class="ion-margin-top c-icon" color="danger"></ion-icon>
+        <ion-icon *ngIf="this.openFoodFacts.scannedHistaminFreeProduct && openFoodFacts.successfulScan" name="thumbs-up-sharp" class="ion-margin-top c-icon" color="success"></ion-icon>
+        <ion-icon *ngIf="!this.openFoodFacts.scannedHistaminFreeProduct && openFoodFacts.successfulScan" name="thumbs-down-sharp" class="ion-margin-top c-icon" color="danger"></ion-icon>
+        <ion-icon *ngIf="!openFoodFacts.successfulScan" name="sad-outline" class="ion-margin-top c-icon"></ion-icon>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <p *ngIf="this.openFoodFacts.scannedHistaminFreeProduct">
+        <p *ngIf="this.openFoodFacts.scannedHistaminFreeProduct && openFoodFacts.successfulScan">
           <b>Kein Histamin enthalten!</b>
         </p>
-        <p *ngIf="!this.openFoodFacts.scannedHistaminFreeProduct">
+        <p *ngIf="!this.openFoodFacts.scannedHistaminFreeProduct && openFoodFacts.successfulScan">
           <b>Kann Histamin enthalten!</b>
+        </p>
+        <p *ngIf="!openFoodFacts.successfulScan">
+          <b>Produkt wurde nicht gefunden!</b>
         </p>
       </ion-col>
     </ion-row>
