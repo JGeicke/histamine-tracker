@@ -1,6 +1,6 @@
 {
-	"appId": "com.example.HistaminTracker",
-	"appName": "Histamin Tracker",
+	"appId": "com.example.HistamineTracker",
+	"appName": "Histamine Tracker",
 	"webDir": "www",
 	"bundledWebRuntime": false,
   "server.cleartext": true
