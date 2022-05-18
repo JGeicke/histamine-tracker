@@ -9,16 +9,20 @@ export class OpenFoodFactsService {
   public scanActive;
 
   public successfulScan;
-  public scannedHistaminFreeProduct = false;
+  public scannedHistamineFreeProduct = false;
   private scannedProductName = '';
 
-  private histaminFood = ['strawberries, raspberries','acid', 'lemon', 'orange', 'citrus', 'banana',
-                          'pineapple', 'kiwi', 'pear', 'papaya', 'guava'];
+  private histamineFood = ['strawberries', 'raspberries','acid', 'lemon', 'orange', 'citrus', 'banana',
+                          'pineapple', 'kiwi', 'pear', 'papaya', 'guava',];
 
   constructor(private httpClient: HttpClient) { }
 
   public getScannedProductName(){
     return this.scannedProductName === undefined ? '':this.scannedProductName;
+  }
+
+  public getHistamineIngredients(){
+    return this.histamineFood;
   }
 
   public getIngredients(barcode: string){
@@ -45,17 +49,17 @@ export class OpenFoodFactsService {
         }
 
         // get ingredients
-        let histaminHits = 0;
+        let histamineHits = 0;
         ingredients.forEach(ingredient => {
-          this.histaminFood.forEach((histaminFood) => {
+          this.histamineFood.forEach((histaminFood) => {
             if(ingredient.id.includes(histaminFood)){
               console.log('ALARM!');
-              histaminHits++;
+              histamineHits++;
             }
           });
         });
 
-        this.scannedHistaminFreeProduct = histaminHits === 0;
+        this.scannedHistamineFreeProduct = histamineHits === 0;
         resolve(1);
       });
     });
