@@ -25,6 +25,10 @@ export class OpenFoodFactsService {
     return this.histamineFood;
   }
 
+  public addHistamineIngredient(name: string){
+    this.histamineFood.push(name.replace(' ', '-'));
+  }
+
   public getIngredients(barcode: string){
     // TODO: error handling
     return new Promise((resolve, reject) => {

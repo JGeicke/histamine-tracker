@@ -1,1 +1,1 @@
-ionic capacitor run android -l --external
+ionic cap run android --livereload --external
