@@ -26,6 +26,13 @@
           <ion-input placeholder="e.g. carrot" required="true" autocorrect="on" clearInput="true" formControlName="name"></ion-input>
         </ion-item>
       </form>
+      <div class="c-validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.name">
+          <div class="c-error-message" *ngIf="ionicForm.get('name').hasError(validation.type) && (ionicForm.get('name').dirty || ionicForm.get('name').touched)">
+            - {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
       <ion-button (click)="addIngredient(this.ionicForm.get('name').value)" type="submit">
         Save
       </ion-button>

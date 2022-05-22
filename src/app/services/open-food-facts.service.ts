@@ -26,6 +26,7 @@ export class OpenFoodFactsService {
   }
 
   public addHistamineIngredient(name: string){
+    console.log(name);
     this.histamineFood.push(name.replace(' ', '-'));
   }
 
