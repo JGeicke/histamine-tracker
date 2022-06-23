@@ -8,18 +8,21 @@
   <div class="ion-text-center">
     <ion-row>
       <ion-col>
-        <ion-icon *ngIf="this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan" name="thumbs-up-sharp" class="ion-margin-top c-icon" color="success"></ion-icon>
-        <ion-icon *ngIf="!this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan" name="thumbs-down-sharp" class="ion-margin-top c-icon" color="danger"></ion-icon>
-        <ion-icon *ngIf="!openFoodFacts.successfulScan" name="sad-outline" class="ion-margin-top c-icon"></ion-icon>
+        <ion-icon *ngIf="this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound" name="thumbs-up-sharp" class="ion-margin-top c-icon" color="success"></ion-icon>
+        <ion-icon *ngIf="!this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound" name="thumbs-down-sharp" class="ion-margin-top c-icon" color="danger"></ion-icon>
+        <ion-icon *ngIf="!openFoodFacts.successfulScan || !openFoodFacts.ingredientsFound" name="sad-outline" class="ion-margin-top c-icon"></ion-icon>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <p *ngIf="this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan">
+        <p *ngIf="this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound">
           <b>Kein Histamin enthalten!</b>
         </p>
-        <p *ngIf="!this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan">
+        <p *ngIf="!this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound">
           <b>Kann Histamin enthalten!</b>
+        </p>
+        <p *ngIf="openFoodFacts.successfulScan && !openFoodFacts.ingredientsFound">
+          <b>Zutaten wurden nicht gefunden!</b>
         </p>
         <p *ngIf="!openFoodFacts.successfulScan">
           <b>Produkt wurde nicht gefunden!</b>

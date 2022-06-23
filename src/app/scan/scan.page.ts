@@ -28,8 +28,10 @@ export class ScanPage implements OnInit, OnDestroy {
   async startScan(){
     console.log('Start');
     const allowed = await this.checkPermission();
+    console.log('Permission: '+allowed);
     if(allowed){
       this.openFoodFacts.scanActive = true;
+      await BarcodeScanner.hideBackground();
       const result = await BarcodeScanner.startScan();
       if(result.hasContent){
         this.result = result.content;
@@ -41,7 +43,7 @@ export class ScanPage implements OnInit, OnDestroy {
   }
 
   async checkPermission(){
-    return new Promise(async (resolve, reject) =>{
+    return new Promise(async (resolve) =>{
       const status = await BarcodeScanner.checkPermission({force: true});
       if(status.granted){
         resolve(true);

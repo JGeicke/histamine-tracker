@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {OpenFoodFactsService} from '../services/open-food-facts.service';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import {Platform, AlertController} from '@ionic/angular';
 
 @Component({
