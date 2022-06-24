@@ -1,26 +1,26 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="main-secondary">
     <ion-title>Settings</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true" class="ion-justify-content-center c-setting-content">
   <ion-list class="c-list">
-    <ion-item *ngFor="let i of openFoodFacts.getHistamineIngredients()">{{i.replace('-', ' ')}}</ion-item>
+    <ion-item color="main-light" *ngFor="let i of openFoodFacts.getHistamineIngredients()">{{i.replace('-', ' ')}}</ion-item>
   </ion-list>
-  <ion-button class="c-add-button" (click)="toggleModal()">
-    <ion-icon name="add-circle-outline"></ion-icon>
+  <ion-button color="main-button" class="c-add-button" (click)="toggleModal()">
+    <ion-icon name="add-circle-outline" color="light"></ion-icon>
   </ion-button>
 </ion-content>
 <ion-modal [isOpen]="isModalShowing">
   <ng-template>
     <ion-header>
-      <ion-toolbar class="ion-text-center">
+      <ion-toolbar color="main" class="ion-text-center">
         <ion-title>Add Histamine Ingredient</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-justify-content-center ion-text-center">
+    <ion-content color="main-secondary" class="ion-justify-content-center ion-text-center">
       <form [formGroup]="ionicForm" novalidate>
-        <ion-item>
+        <ion-item color="main-light">
           <ion-label>Name:</ion-label>
           <ion-input placeholder="e.g. carrot" required="true" autocorrect="on" clearInput="true" formControlName="name"></ion-input>
         </ion-item>
@@ -32,7 +32,7 @@
           </div>
         </ng-container>
       </div>
-      <ion-button (click)="addIngredient(this.ionicForm.get('name').value)" type="submit">
+      <ion-button color="main-button" (click)="addIngredient(this.ionicForm.get('name').value)" type="submit">
         Save
       </ion-button>
     </ion-content>

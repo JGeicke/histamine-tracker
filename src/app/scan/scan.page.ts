@@ -26,16 +26,17 @@ export class ScanPage implements OnInit, OnDestroy {
   }
 
   async startScan(){
-    console.log('Start');
     const allowed = await this.checkPermission();
     console.log('Permission: '+allowed);
     if(allowed){
       this.openFoodFacts.scanActive = true;
+      document.body.classList.add('scanner');
       await BarcodeScanner.hideBackground();
       const result = await BarcodeScanner.startScan();
       if(result.hasContent){
         this.result = result.content;
         this.openFoodFacts.scanActive = false;
+        document.body.classList.remove('scanner');
         await this.openFoodFacts.getIngredients(this.result);
         await this.router.navigate(['/result']);
       }
@@ -68,10 +69,5 @@ export class ScanPage implements OnInit, OnDestroy {
         resolve(false);
       }
     });
-  }
-
-  stopScanner(){
-    BarcodeScanner.stopScan();
-    this.openFoodFacts.scanActive = false;
   }
 }

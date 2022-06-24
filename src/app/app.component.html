@@ -1,27 +1,34 @@
-<ion-app>
+<ion-app class="c-scan">
   <ion-menu side="start" content-id="main-content">
     <ion-header>
-      <ion-toolbar>
-        <ion-title>Histamine Tracker</ion-title>
+      <ion-toolbar color="main">
+        <ion-row>
+          <ion-col size="2">
+            <img src="assets/icon.png" alt="Histamine Tracker icon in white">
+          </ion-col>
+          <ion-col>
+            <ion-title>Histamine Tracker</ion-title>
+          </ion-col>
+        </ion-row>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle auto-hide="true" >
-          <ion-item routerLink="/scan">
-            <ion-icon name="camera-outline" slot="start"></ion-icon>
+    <ion-content color="main-secondary">
+      <ion-list class="c-list">
+        <ion-menu-toggle auto-hide="true">
+          <ion-item color="main-secondary" routerLink="/scan">
+            <ion-icon name="camera-outline" slot="start"  color="light"></ion-icon>
             <ion-label>Barcode Scanner</ion-label>
           </ion-item>
-          <ion-item routerLink="/settings">
-            <ion-icon name="settings-outline" slot="start"></ion-icon>
+          <ion-item color="main-secondary" routerLink="/settings">
+            <ion-icon name="settings-outline" slot="start"  color="light"></ion-icon>
             <ion-label>Settings</ion-label>
           </ion-item>
-          <ion-item routerLink="/privacy">
-            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-item color="main-secondary" routerLink="/privacy">
+            <ion-icon name="lock-closed-outline" slot="start"  color="light"></ion-icon>
             <ion-label>Privacy</ion-label>
           </ion-item>
-          <ion-item routerLink="/about-us">
-            <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-item color="main-secondary" routerLink="/about-us">
+            <ion-icon name="information-circle-outline" slot="start" color="light"></ion-icon>
             <ion-label>About us</ion-label>
           </ion-item>
         </ion-menu-toggle>
@@ -31,15 +38,20 @@
 
   <div class="ion-page" id="main-content">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="main">
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title>Histamine Tracker</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
+    <ion-content class="ion-padding" color="main-secondary">
       <router-outlet></router-outlet>
     </ion-content>
   </div>
 </ion-app>
+<div class="c-scan-area" *ngIf="this.openFoodFacts.scanActive"></div>
+<div *ngIf="this.openFoodFacts.scanActive">
+  <ion-button color="main-button" class="c-stop-scan-button" (click)="stopScanner()">Stop Scan</ion-button>
+</div>
+<div class="c-scan-area" *ngIf="this.openFoodFacts.scanActive"></div>
