@@ -90,6 +90,7 @@ export class OpenFoodFactsService {
     'creme-fraiche',
     'feta',
   ];
+  private customIngredients = ['maggi'];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -101,10 +102,22 @@ export class OpenFoodFactsService {
     return this.histamineFood;
   }
 
-  public addHistamineIngredient(name: string){
-    console.log(name);
-    this.histamineFood.push(name.replace(' ', '-'));
+  public getCustomIngredients(){
+    return this.customIngredients;
   }
+
+  public addCustomIngredient(name: string){
+    console.log(name);
+    this.customIngredients.push(name.replace(' ', '-'));
+  }
+
+  public deleteCustomIngredient(name: string){
+    const index = this.customIngredients.indexOf(name);
+    if(index > -1){
+      this.customIngredients.splice(index, 1);
+    }
+  }
+
 
   public getIngredients(barcode: string){
     // TODO: error handling (http 404)
@@ -139,8 +152,17 @@ export class OpenFoodFactsService {
           // get ingredients
           let histamineHits = 0;
           ingredients.forEach(ingredient => {
+            // check base ingredients
             this.histamineFood.forEach((histaminFood) => {
               if(ingredient.id.includes(histaminFood)){
+                console.log('ALARM!');
+                histamineHits++;
+              }
+            });
+
+            // check custom ingredients
+            this.customIngredients.forEach((i) => {
+              if(ingredient.id.includes(i)){
                 console.log('ALARM!');
                 histamineHits++;
               }

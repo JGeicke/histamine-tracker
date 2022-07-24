@@ -73,6 +73,12 @@
 .c-scan-area { display: none; }
 .c-scan { visibility: visible; }
 
+// settings delete alert
+button.alert-button.c-alert-button-delete {
+  background-color: var(--ion-color-danger);
+  color: white;
+}
+
 body.scanner { background-color: transparent; }
 body.scanner .c-scan-area { display: block; }
 body.scanner .c-scan { visibility: hidden; }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {OpenFoodFactsService} from '../services/open-food-facts.service';
 import {FormBuilder, Validators} from '@angular/forms';
-import {Platform, AlertController} from '@ionic/angular';
+import {Platform, AlertController, ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-settings',
@@ -25,7 +25,8 @@ export class SettingsPage implements OnInit {
   constructor(public openFoodFacts: OpenFoodFactsService,
               public formBuilder: FormBuilder,
               public platform: Platform,
-              public alertController: AlertController) { }
+              public alertController: AlertController,
+              public toastController: ToastController) { }
 
   ngOnInit() {
     // handle user pressing back button
@@ -46,9 +47,16 @@ export class SettingsPage implements OnInit {
       this.ionicForm.reset();
 
       // remove multiple whitespaces from string before adding it
-      this.openFoodFacts.addHistamineIngredient(name.replace(/\s+/g, ' '));
+      this.openFoodFacts.addCustomIngredient(name.replace(/\s+/g, ' '));
       this.toggleModal();
+
+      // TODO: display toast
     }
+  }
+
+  deleteIngredient(name: string){
+    this.openFoodFacts.deleteCustomIngredient(name);
+    this.showSuccessfulDeleteToast();
   }
 
   toggleModal(){
@@ -56,6 +64,35 @@ export class SettingsPage implements OnInit {
       this.input = '';
     }
     this.isModalShowing = !this.isModalShowing;
+  }
+
+  async showDeleteAlert(name: string){
+    const alert = await this.alertController.create({
+      header: 'Warning',
+      message: 'Are you sure that you want to delete \"'+ name + '\"?',
+      buttons: [{
+        text: 'Cancel',
+        role: 'cancel',
+      },
+      {
+        text: 'Delete',
+        role: 'confirm',
+        cssClass: 'c-alert-button-delete',
+        handler: () => this.deleteIngredient(name)
+      }]
+    });
+
+    await alert.present();
+  }
+
+  async showSuccessfulDeleteToast(){
+    const toast = await this.toastController.create({
+      message: 'You successfully deleted the ingredient.',
+      duration: 2000,
+      color: 'success'
+    });
+
+    await toast.present();
   }
 
 }
