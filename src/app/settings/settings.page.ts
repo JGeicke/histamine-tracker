@@ -49,14 +49,13 @@ export class SettingsPage implements OnInit {
       // remove multiple whitespaces from string before adding it
       this.openFoodFacts.addCustomIngredient(name.replace(/\s+/g, ' '));
       this.toggleModal();
-
-      // TODO: display toast
+      this.showSuccessfulToast('You successfully added '+name+' to the ingredients.');
     }
   }
 
   deleteIngredient(name: string){
     this.openFoodFacts.deleteCustomIngredient(name);
-    this.showSuccessfulDeleteToast();
+    this.showSuccessfulToast('You successfully deleted the ingredient.');
   }
 
   toggleModal(){
@@ -85,9 +84,9 @@ export class SettingsPage implements OnInit {
     await alert.present();
   }
 
-  async showSuccessfulDeleteToast(){
+  async showSuccessfulToast(text: string){
     const toast = await this.toastController.create({
-      message: 'You successfully deleted the ingredient.',
+      message: text,
       duration: 2000,
       color: 'success'
     });
