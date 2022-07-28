@@ -38,6 +38,21 @@
       </div>
     </ion-accordion>
   </ion-accordion-group>
+  <ion-title class="ion-margin-vertical">Language</ion-title>
+  <ion-list class="c-list">
+    <ion-radio-group class="c-list" value="en">
+      <ion-item color="main-light">
+        <ion-label>English</ion-label>
+        <ion-radio color="main-button" slot="start" value="en"></ion-radio>
+      </ion-item>
+      <!--
+      <ion-item color="main-light" lines="none">
+        <ion-label>Deutsch</ion-label>
+        <ion-radio color="main-button" slot="start" value="de"></ion-radio>
+      </ion-item>
+      -->
+    </ion-radio-group>
+  </ion-list>
 </ion-content>
 <ion-modal [isOpen]="isModalShowing">
   <ng-template>
