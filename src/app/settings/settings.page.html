@@ -4,17 +4,40 @@
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true" class="ion-justify-content-center c-setting-content">
-  <ion-list class="c-list">
-    <ion-item color="main-light" *ngFor="let i of openFoodFacts.getHistamineIngredients()">{{i.replace('-', ' ')}}</ion-item>
-    <ion-item color="main-light" *ngFor="let c of openFoodFacts.getCustomIngredients()">{{c}}
-      <ion-button color="danger" slot="end" (click)="showDeleteAlert(c)">
-        <ion-icon name="trash-outline" color="light"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-  <ion-button color="main-button" class="c-add-button" (click)="toggleModal()">
-    <ion-icon name="add-circle-outline" color="light"></ion-icon>
-  </ion-button>
+  <ion-title class="ion-margin-vertical">Ingredients</ion-title>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="main-tertiary">
+        <ion-label>Basic ingredients</ion-label>
+      </ion-item>
+      <div class="ion-padding c-list" slot="content">
+        <ion-list class="c-list">
+          <ion-item color="main-light" *ngFor="let i of openFoodFacts.getHistamineIngredients()">{{i.replace('-', ' ')}}</ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="main-tertiary">
+        <ion-label>Custom ingredients</ion-label>
+      </ion-item>
+      <div class="ion-padding c-list" slot="content">
+        <ion-list class="c-list">
+          <ion-item color="main-light" *ngFor="let c of openFoodFacts.getCustomIngredients()">{{c}}
+            <ion-button color="danger" slot="end" (click)="showDeleteAlert(c)">
+              <ion-icon name="trash-outline" color="light"></ion-icon>
+            </ion-button>
+          </ion-item>
+          <ion-item color="main-light" class="ion-text-center" lines="none">
+            <ion-label>
+              <ion-button color="main-button" (click)="toggleModal()">
+                <ion-icon name="add-circle-outline" color="light"></ion-icon>
+              </ion-button>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>
 <ion-modal [isOpen]="isModalShowing">
   <ng-template>

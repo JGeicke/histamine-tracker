@@ -52,6 +52,15 @@
   --ion-color-tint: var(--ion-color-main-secondary-tint);
 }
 
+.ion-color-main-tertiary {
+  --ion-color-base: var(--ion-color-main-tertiary);
+  --ion-color-base-rgb: var(--ion-color-main-tertiary-rgb);
+  --ion-color-contrast: var(--ion-color-main-tertiary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-main-tertiary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-main-tertiary-shade);
+  --ion-color-tint: var(--ion-color-main-tertiary-tint);
+}
+
 .ion-color-main-button {
   --ion-color-base: var(--ion-color-main-button);
   --ion-color-base-rgb: var(--ion-color-main-button-rgb);
