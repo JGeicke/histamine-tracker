@@ -27,7 +27,6 @@ export class ScanPage implements OnInit, OnDestroy {
 
   async startScan(){
     const allowed = await this.checkPermission();
-    console.log('Permission: '+allowed);
     if(allowed){
       this.openFoodFacts.scanActive = true;
       document.body.classList.add('scanner');
