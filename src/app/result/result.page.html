@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="main-light">
+<ion-content color="main-tertiary">
   <div class="ion-text-center">
     <ion-row>
       <ion-col>
@@ -16,16 +16,28 @@
     <ion-row>
       <ion-col>
         <p *ngIf="this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound">
-          <b>Kein Histamin enthalten!</b>
+          <b>No histamine contained!</b>
         </p>
-        <p *ngIf="!this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound">
-          <b>Kann Histamin enthalten!</b>
-        </p>
+        <div *ngIf="!this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound">
+          <b>Can contain histamine!</b>
+          <ion-accordion-group>
+            <ion-accordion value="first" class="c-histamine-accordion">
+              <ion-item slot="header" color="main-secondary" class="c-histamine-ingredients ion-margin-top">
+                <ion-label>Ingredients that can contain histamine:</ion-label>
+              </ion-item>
+              <div class="ion-padding c-histamine-ingredients-content" slot="content">
+                <ion-list class="c-histamine-ingredients-content">
+                  <ion-item color="main-light" *ngFor="let i of openFoodFacts.getMatchingIngredients()">{{i}}</ion-item>
+                </ion-list>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </div>
         <p *ngIf="openFoodFacts.successfulScan && !openFoodFacts.ingredientsFound">
-          <b>Zutaten wurden nicht gefunden!</b>
+          <b>Ingredients not found!</b>
         </p>
         <p *ngIf="!openFoodFacts.successfulScan">
-          <b>Produkt wurde nicht gefunden!</b>
+          <b>Product not found!</b>
         </p>
       </ion-col>
     </ion-row>

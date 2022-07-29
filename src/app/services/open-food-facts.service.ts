@@ -92,6 +92,8 @@ export class OpenFoodFactsService {
   ];
   private customIngredients = [];
 
+  private matchingIngredients = [];
+
   constructor(private httpClient: HttpClient) { }
 
   public getScannedProductName(){
@@ -104,6 +106,10 @@ export class OpenFoodFactsService {
 
   public getCustomIngredients(){
     return this.customIngredients;
+  }
+
+  public getMatchingIngredients(){
+    return this.matchingIngredients;
   }
 
   public addCustomIngredient(name: string){
@@ -148,20 +154,25 @@ export class OpenFoodFactsService {
           }
           this.ingredientsFound = true;
 
+          // reset matching ingredients
+          this.matchingIngredients = [];
+
           // get ingredients
           let histamineHits = 0;
           ingredients.forEach(ingredient => {
             // check base ingredients
-            this.histamineFood.forEach((histaminFood) => {
-              if(ingredient.id.includes(histaminFood)){
+            this.histamineFood.forEach((histamineFood) => {
+              if(ingredient.id.includes(histamineFood)){
                 histamineHits++;
+                this.matchingIngredients.push(histamineFood);
               }
             });
 
             // check custom ingredients
-            this.customIngredients.forEach((i) => {
-              if(ingredient.id.includes(i)){
+            this.customIngredients.forEach((customHistamineFood) => {
+              if(ingredient.id.includes(customHistamineFood)){
                 histamineHits++;
+                this.matchingIngredients.push(customHistamineFood);
               }
             });
           });
