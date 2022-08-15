@@ -1,0 +1,59 @@
+{
+  "SCAN": {
+    "startScan": "Scannen starten..."
+  },
+  "MENU": {
+    "settings": "Einstellungen",
+    "privacy": "Datenschutzerklärung",
+    "aboutus": "Über uns"
+  },
+  "SETTINGS": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "ingredients": "Zutaten",
+    "basic": "Basis-Zutaten",
+    "custom": "Benutzerdefinierte Zutaten",
+    "modal-title": "Histaminhaltige Zutat hinzufügen",
+    "modal-example": "bspw. Karotte",
+    "modal-save": "Speichern",
+    "toast-add-1": "Die Zutat ",
+    "toast-add-2": " wurde erfolgreich hinzugefügt.",
+    "toast-delete": "Die Zutat wurde erfolgreich gelöscht.",
+    "warning": "Warning",
+    "warning-message-1": "Soll die Zutat \"",
+    "warning-message-2": "\" wirklich gelöscht werden?",
+    "warning-cancel": "Abbrechen",
+    "warning-confirm": "Löschen"
+  },
+  "RESULT": {
+    "no-histamine": "Kein Histamin enthalten!",
+    "histamine": "Kann Histamin enthalten!",
+    "ingredient-list": "Zutaten, die Histamin enthalten können:",
+    "ingredient-not-found": "Zutaten wurden nicht gefunden!",
+    "product-not-found": "Produkt wurde nicht gefunden!"
+  },
+  "ABOUT-US": {
+    "about": "Über",
+    "developed": "Entwickelt von: ",
+    "database": "Zutatendatenbank: ",
+    "information": "Information über histaminhaltiges Essen/Zutaten: ",
+    "technologies": "Verwendeten Technologien: "
+  },
+  "PRIVACY": {
+    "title": "Datenschutzbestimmung",
+    "personal-data": "Persönliche Daten",
+    "personal-data-content": "Histamine Tracker erhebt keine persönlichen Daten. Keine persönliche Daten werden für die Funktionen der App benötigt. Werden keine persönliche Daten erhoben, können keine Daten entwendet, veröffentlicht oder missbraucht werden.\n  Somit handelt es um den bestmöglichen Schutz der Privatsphäre des Nutzers.",
+    "app-permissions": "App Berechtigungen",
+    "app-permissions-content": "<p class=\"c-text\">Die App benötigt folgende Berechtigungen zur korrekten Funktionsweise:</p>\n    <ul>\n      <li class=\"c-text\"><strong>Berechtigung für das Internet</strong> - um die Zutaten eines gescannten Produkts in der OpenFoodFacts Datenbank zu ermitteln.</li>\n      <li class=\"c-text\"><strong>Berechtigung für die Kamera</strong> - um die Strichcodes der Produkte scannen zu können.</li>\n    </ul>\n    <p class=\"c-text\">Die Berechtigungen lassen sich auf die Laufzeit der App beschränken und werden jeweils nur für den zuvor beschriebenen Zweck verwendet.</p>",
+    "cookies": "Cookies",
+    "cookies-content": "<p class=\"c-text\">Histamine Tracker verwendet keinerlei Tracking Cookies oder sonstige Cookies, die zur Identifikation des Nutzers verwendet werden können.</p>",
+    "other-policies": "Datenschutzbestimmung anderer Webseiten",
+    "other-policies-content": "<p class=\"c-text\">Die Histamine Tracker App besitzt Links auf andere Websiten.\n      Diese Datenschutzbestimmung bezieht sich lediglich auf die Histamine Tracker Applikation. Beim Klicken eines entsprechenden Links sollte daher die Datenschutzbestimmung der anderen Webseite gelesen werden.</p>",
+    "changes": "Änderungen an dieser Datenschutzbestimmung",
+    "changes-content": "    <p class=\"c-text\">Die Datenschutzbestimmung der Histamine Tracker App wird regelmäßig geprüft und aktualisiert. Dabei wird jede Aktualisierung entsprechend auf dieser Seite angegeben. Die letzte Aktualisierung der Datenschutzbestimmung fand am 23.Juni 2022 statt.</p>\n",
+    "contact": "Kontakt",
+    "contact-content": "<p class=\"c-text\">Bei Fragen zur Datenschutzbestimmung des Histamine Tracker, kontaktieren Sie mich bitte per E-Mail.</p><br>\n\n    Meine E-Mail: <a href=\"mailto:jangeicke@yahoo.de\">jangeicke@yahoo.de</a>",
+    "contact-authority": "Kontakt zu entsprechenden Authoritäten",
+    "contact-authority-content": "<p class=\"c-text\">Sollten Sie eine Beschwerde aufgegeben wollen oder Sie das Gefühl haben, dass ich auf Ihre Bedenken nicht zufriedenstellend eingegangen bin,\n      kontaktieren Sie bitte die hessische Datenschutzaufsichtsbehörde.</p>\n    <p class=\"c-text\">\n      Der Hessische Beauftragte für Datenschutz und Informationsfreiheit<br>\n      Postfach 3163<br>\n      65021 Wiesbaden<br>\n\n      Telefon: +49 611 1408 - 0\n    </p>"
+  }
+}

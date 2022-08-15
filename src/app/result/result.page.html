@@ -16,14 +16,14 @@
     <ion-row>
       <ion-col>
         <p *ngIf="this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound">
-          <b>No histamine contained!</b>
+          <b>{{'RESULT.no-histamine' | translate}}</b>
         </p>
         <div *ngIf="!this.openFoodFacts.scannedHistamineFreeProduct && openFoodFacts.successfulScan && openFoodFacts.ingredientsFound">
-          <b>Can contain histamine!</b>
+          <b>{{'RESULT.histamine' | translate}}</b>
           <ion-accordion-group>
             <ion-accordion value="first" class="c-histamine-accordion">
               <ion-item slot="header" color="main-secondary" class="c-histamine-ingredients ion-margin-top">
-                <ion-label>Ingredients that can contain histamine:</ion-label>
+                <ion-label>{{'RESULT.ingredient-list' | translate}}</ion-label>
               </ion-item>
               <div class="ion-padding c-histamine-ingredients-content" slot="content">
                 <ion-list class="c-histamine-ingredients-content">
@@ -34,10 +34,10 @@
           </ion-accordion-group>
         </div>
         <p *ngIf="openFoodFacts.successfulScan && !openFoodFacts.ingredientsFound">
-          <b>Ingredients not found!</b>
+          <b>{{'RESULT.ingredient-not-found' | translate}}</b>
         </p>
         <p *ngIf="!openFoodFacts.successfulScan">
-          <b>Product not found!</b>
+          <b>{{'RESULT.product-not-found' | translate}}</b>
         </p>
       </ion-col>
     </ion-row>

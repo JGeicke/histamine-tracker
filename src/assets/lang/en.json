@@ -1,0 +1,59 @@
+{
+  "SCAN": {
+    "startScan": "Start Scanning..."
+  },
+  "MENU": {
+    "settings": "Settings",
+    "privacy": "Privacy policy",
+    "aboutus": "About us"
+  },
+  "SETTINGS": {
+    "title": "Settings",
+    "language": "Language",
+    "ingredients": "Ingredients",
+    "basic": "Basic ingredients",
+    "custom": "Custom ingredients",
+    "modal-title": "Add Histamine Ingredient",
+    "modal-example": "e.g. carrot",
+    "modal-save": "Save",
+    "toast-add-1": "You successfully added ",
+    "toast-add-2": " to the ingredients.",
+    "toast-delete": "You successfully deleted the ingredient.",
+    "warning": "Warning",
+    "warning-message-1": "Are you sure that you want to delete \"",
+    "warning-message-2": "\"?",
+    "warning-cancel": "Cancel",
+    "warning-confirm": "Delete"
+  },
+  "RESULT": {
+    "no-histamine": "No histamine contained!",
+    "histamine": "Can contain histamine!",
+    "ingredient-list": "Ingredients that can contain histamine:",
+    "ingredient-not-found": "Ingredients not found!",
+    "product-not-found": "Product not found!"
+  },
+  "ABOUT-US": {
+    "about": "About",
+    "developed": "Developed by: ",
+    "database": "Food ingredient database: ",
+    "information": "Information about food/ingredients containing histamine: ",
+    "technologies": "Used technologies: "
+  },
+  "PRIVACY": {
+    "title": "Privacy policy",
+    "personal-data": "Personal data",
+    "personal-data-content": "Histamine Tracker does not collect any personal data. No personal data is needed for the app to work. If no personal data is collected, no data can be stolen, leaked or abused.\n    This is the best way to protect the privacy of the app user.",
+    "app-permissions": "App permissions",
+    "app-permissions-content": "<p class=\"c-text\">For the app to function properly a couple of permissions are needed:</p>\n    <ul>\n      <li class=\"c-text\"><strong>Internet permission</strong> - to be able to access the OpenFoodFacts database for the ingredients of scanned products.</li>\n      <li class=\"c-text\"><strong>Camera permission</strong> - to be able to use the device camera for the barcode scans.</li>\n    </ul>\n    <p class=\"c-text\">These permissions can be limited to app runtime and are only used for the described purpose.</p>",
+    "cookies": "Cookies",
+    "cookies-content": "<p class=\"c-text\">Histamine Tracker does not use any tracking or identifying cookies.</p>",
+    "other-policies": "Privacy policies of other websites",
+    "other-policies-content": "<p class=\"c-text\">The Histamine Tracker app contains links to other websites.\n      This privacy policy applies only to Histamine Tracker application, so if you click on a link to another website, you should read their privacy policy.</p>",
+    "changes": "Changes to our privacy policy",
+    "changes-content": "    <p class=\"c-text\">Histamine Tracker keeps its privacy policy under regular review and places any updates on this page. This privacy policy was last updated on 23 June 2022.</p>\n",
+    "contact": "How to contact me",
+    "contact-content": "<p class=\"c-text\">If you have any questions about Histamine Tracker’s privacy policy, please do not hesitate to contact me.</p><br>\n\n    Email me at: <a href=\"mailto:jangeicke@yahoo.de\">jangeicke@yahoo.de</a>",
+    "contact-authority": "How to contact the appropriate authority",
+    "contact-authority-content": "<p class=\"c-text\">Should you wish to report a complaint or if you feel that Histamine Tracker has not addressed your concern in a satisfactory manner,\n      you may contact the Information Commissioner’s Office.</p>\n    <p class=\"c-text\">\n      Der Hessische Beauftragte für Datenschutz und Informationsfreiheit<br>\n      Postfach 3163<br>\n      65021 Wiesbaden<br>\n\n      Phone: +49 611 1408 - 0\n    </p>"
+  }
+}

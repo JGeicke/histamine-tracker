@@ -1,29 +1,27 @@
 <ion-header>
   <ion-toolbar color="main-secondary">
-    <ion-title>Settings</ion-title>
+    <ion-title>{{'SETTINGS.title' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true" class="ion-justify-content-center c-setting-content">
-  <ion-title class="ion-margin-vertical">Language</ion-title>
+  <ion-title class="ion-margin-vertical">{{'SETTINGS.language' | translate}}</ion-title>
   <ion-list class="c-list">
-    <ion-radio-group class="c-list" value="en">
+    <ion-radio-group class="c-list" value="{{languageService.getSelectedLanguage()}}" (ionChange)="this.languageService.setLanguage($event.detail.value)">
       <ion-item color="main-light">
         <ion-label>English</ion-label>
         <ion-radio color="main-button" slot="start" value="en"></ion-radio>
       </ion-item>
-      <!--
       <ion-item color="main-light" lines="none">
         <ion-label>Deutsch</ion-label>
         <ion-radio color="main-button" slot="start" value="de"></ion-radio>
       </ion-item>
-      -->
     </ion-radio-group>
   </ion-list>
-  <ion-title class="ion-margin-vertical">Ingredients</ion-title>
+  <ion-title class="ion-margin-vertical">{{'SETTINGS.ingredients' | translate}}</ion-title>
   <ion-accordion-group>
     <ion-accordion value="first">
       <ion-item slot="header" color="main-tertiary">
-        <ion-label>Basic ingredients</ion-label>
+        <ion-label>{{'SETTINGS.basic' | translate}}</ion-label>
       </ion-item>
       <div class="ion-padding c-list" slot="content">
         <ion-list class="c-list">
@@ -33,7 +31,7 @@
     </ion-accordion>
     <ion-accordion value="second">
       <ion-item slot="header" color="main-tertiary">
-        <ion-label>Custom ingredients</ion-label>
+        <ion-label>{{'SETTINGS.custom' | translate}}</ion-label>
       </ion-item>
       <div class="ion-padding c-list" slot="content">
         <ion-list class="c-list">
@@ -61,14 +59,14 @@
         <ion-button class="ion-margin-start" color="main-button" slot="start" (click)="toggleModal()">
           <ion-icon name="arrow-back-outline"></ion-icon>
         </ion-button>
-        <ion-title>Add Histamine Ingredient</ion-title>
+        <ion-title>{{'SETTINGS.modal-title' | translate}}</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content color="main-secondary" class="ion-justify-content-center ion-text-center">
       <form [formGroup]="ionicForm" novalidate>
         <ion-item color="main-light">
           <ion-label>Name:</ion-label>
-          <ion-input placeholder="e.g. carrot" required="true" autocorrect="on" clearInput="true" formControlName="name"></ion-input>
+          <ion-input placeholder="{{'SETTINGS.modal-example' | translate}}" required="true" autocorrect="on" clearInput="true" formControlName="name"></ion-input>
         </ion-item>
       </form>
       <div class="c-validation-errors">
@@ -79,7 +77,7 @@
         </ng-container>
       </div>
       <ion-button color="main-button" (click)="addIngredient(this.ionicForm.get('name').value)" type="submit">
-        Save
+        {{'SETTINGS.modal-save' | translate}}
       </ion-button>
     </ion-content>
   </ng-template>

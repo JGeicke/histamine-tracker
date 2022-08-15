@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {OpenFoodFactsService} from '../services/open-food-facts.service';
 import {FormBuilder, Validators} from '@angular/forms';
 import {Platform, AlertController, ToastController} from '@ionic/angular';
+import {LanguageService} from '../services/language.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-settings',
@@ -26,7 +28,10 @@ export class SettingsPage implements OnInit {
               public formBuilder: FormBuilder,
               public platform: Platform,
               public alertController: AlertController,
-              public toastController: ToastController) { }
+              public toastController: ToastController,
+              public languageService: LanguageService,
+              private translateService: TranslateService) {
+  }
 
   ngOnInit() {
     // handle user pressing back button
@@ -49,13 +54,16 @@ export class SettingsPage implements OnInit {
       // remove multiple whitespaces from string before adding it
       this.openFoodFacts.addCustomIngredient(name.replace(/\s+/g, ' '));
       this.toggleModal();
-      this.showSuccessfulToast('You successfully added '+name+' to the ingredients.');
+      const part1 = this.translateService.instant('SETTINGS.toast-add-1');
+      const part2 = this.translateService.instant('SETTINGS.toast-add-2');
+      this.showSuccessfulToast(part1+name+part2);
     }
   }
 
   deleteIngredient(name: string){
     this.openFoodFacts.deleteCustomIngredient(name);
-    this.showSuccessfulToast('You successfully deleted the ingredient.');
+    const toast = this.translateService.instant('SETTINGS.toast-delete');
+    this.showSuccessfulToast(toast);
   }
 
   toggleModal(){
@@ -67,20 +75,20 @@ export class SettingsPage implements OnInit {
 
   async showDeleteAlert(name: string){
     const alert = await this.alertController.create({
-      header: 'Warning',
-      message: 'Are you sure that you want to delete \"'+ name + '\"?',
+      header: this.translateService.instant('SETTINGS.warning'),
+      message: this.translateService.instant('SETTINGS.warning-message-1')
+        + name + this.translateService.instant('SETTINGS.warning-message-2'),
       buttons: [{
-        text: 'Cancel',
+        text: this.translateService.instant('SETTINGS.warning-cancel'),
         role: 'cancel',
       },
       {
-        text: 'Delete',
+        text: this.translateService.instant('SETTINGS.warning-confirm'),
         role: 'confirm',
         cssClass: 'c-alert-button-delete',
         handler: () => this.deleteIngredient(name)
       }]
     });
-
     await alert.present();
   }
 
@@ -93,5 +101,4 @@ export class SettingsPage implements OnInit {
 
     await toast.present();
   }
-
 }
