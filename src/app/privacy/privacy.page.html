@@ -2,19 +2,70 @@
   <h1 class="ion-text-center c-title">{{"PRIVACY.title" | translate}}</h1>
   <hr>
   <div class="ion-text-center c-text">
-    <h2>{{"PRIVACY.personal-data" | translate}}</h2>
-    <p class="c-text">{{"PRIVACY.personal-data-content" | translate}}</p>
-    <h2>{{"PRIVACY.app-permissions" | translate}}</h2>
-    <div [innerHTML]="'PRIVACY.app-permissions-content' | translate"></div>
-    <h2>{{"PRIVACY.cookies" | translate}}</h2>
-    <div [innerHTML]="'PRIVACY.cookies-content' | translate"></div>
-    <h2>{{"PRIVACY.other-policies" | translate}}</h2>
-    <div [innerHTML]="'PRIVACY.other-policies-content' | translate"></div>
-    <h2>{{"PRIVACY.changes" | translate}}</h2>
-    <div [innerHTML]="'PRIVACY.changes-content' | translate"></div>
-    <h2>{{"PRIVACY.contact" | translate}}</h2>
-    <div [innerHTML]="'PRIVACY.contact-content' | translate"></div>
-    <h2>{{"PRIVACY.contact-authority" | translate}}</h2>
-    <div [innerHTML]="'PRIVACY.contact-authority-content' | translate"></div>
+    <!-- personal data -->
+    <ion-card color="main-tertiary">
+      <ion-card-header>
+        <ion-card-title>{{"PRIVACY.personal-data" | translate}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text>{{"PRIVACY.personal-data-content" | translate}}</ion-text>
+      </ion-card-content>
+    </ion-card>
+    <!-- app permissions -->
+    <ion-card color="main-tertiary">
+      <ion-card-header>
+        <ion-card-title>{{"PRIVACY.app-permissions" | translate}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text [innerHTML]="'PRIVACY.app-permissions-content' | translate"></ion-text>
+      </ion-card-content>
+    </ion-card>
+    <!-- cookies -->
+    <ion-card color="main-tertiary">
+      <ion-card-header>
+        <ion-card-title>{{"PRIVACY.cookies" | translate}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text [innerHTML]="'PRIVACY.cookies-content' | translate"></ion-text>
+      </ion-card-content>
+    </ion-card>
+    <!-- other policies -->
+    <ion-card color="main-tertiary">
+      <ion-card-header>
+        <ion-card-title>{{"PRIVACY.other-policies" | translate}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text [innerHTML]="'PRIVACY.other-policies-content' | translate"></ion-text>
+      </ion-card-content>
+    </ion-card>
+    <!-- changes -->
+    <ion-card color="main-tertiary">
+      <ion-card-header>
+        <ion-card-title>{{"PRIVACY.changes" | translate}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text [innerHTML]="'PRIVACY.changes-content' | translate"></ion-text>
+      </ion-card-content>
+    </ion-card>
+    <!-- contact -->
+    <ion-card color="main-tertiary">
+      <ion-card-header>
+        <ion-card-title>{{"PRIVACY.contact" | translate}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text [innerHTML]="'PRIVACY.contact-content' | translate"></ion-text>
+      </ion-card-content>
+    </ion-card>
+    <!-- contact authority -->
+    <ion-card color="main-tertiary">
+      <ion-card-header>
+        <ion-card-title>{{"PRIVACY.contact-authority" | translate}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text [innerHTML]="'PRIVACY.contact-authority-content' | translate"></ion-text>
+        <br>
+        <ion-text [innerHTML]="'PRIVACY.contact-authority-address' | translate"></ion-text>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

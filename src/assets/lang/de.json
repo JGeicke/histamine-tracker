@@ -54,6 +54,7 @@
     "contact": "Kontakt",
     "contact-content": "<p class=\"c-text\">Bei Fragen zur Datenschutzbestimmung des Histamine Tracker, kontaktieren Sie mich bitte per E-Mail.</p><br>\n\n    Meine E-Mail: <a href=\"mailto:jangeicke@yahoo.de\">jangeicke@yahoo.de</a>",
     "contact-authority": "Kontakt zu entsprechenden Authoritäten",
-    "contact-authority-content": "<p class=\"c-text\">Sollten Sie eine Beschwerde aufgegeben wollen oder Sie das Gefühl haben, dass ich auf Ihre Bedenken nicht zufriedenstellend eingegangen bin,\n      kontaktieren Sie bitte die hessische Datenschutzaufsichtsbehörde.</p>\n    <p class=\"c-text\">\n      Der Hessische Beauftragte für Datenschutz und Informationsfreiheit<br>\n      Postfach 3163<br>\n      65021 Wiesbaden<br>\n\n      Telefon: +49 611 1408 - 0\n    </p>"
+    "contact-authority-content": "<p class=\"c-text\">Sollten Sie eine Beschwerde aufgegeben wollen oder Sie das Gefühl haben, dass ich auf Ihre Bedenken nicht zufriedenstellend eingegangen bin,\n      kontaktieren Sie bitte die hessische Datenschutzaufsichtsbehörde.</p>\n    <p class=\"c-text\">\n",
+    "contact-authority-address": "<p class=\"c-text\">Der Hessische Beauftragte für Datenschutz und Informationsfreiheit<br>Postfach 3163<br>65021 Wiesbaden<br>Telefon: +49 611 1408 - 0</p>"
   }
 }
