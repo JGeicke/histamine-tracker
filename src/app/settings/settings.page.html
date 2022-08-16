@@ -1,62 +1,76 @@
 <ion-header>
   <ion-toolbar color="main-secondary">
-    <ion-title>{{'SETTINGS.title' | translate}}</ion-title>
+    <ion-title size="large">{{'SETTINGS.title' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true" class="ion-justify-content-center c-setting-content">
-  <ion-title class="ion-margin-vertical">{{'SETTINGS.language' | translate}}</ion-title>
-  <ion-list class="c-list">
-    <ion-radio-group class="c-list" value="{{languageService.getSelectedLanguage()}}" (ionChange)="this.languageService.setLanguage($event.detail.value)">
-      <ion-item color="main-light">
-        <ion-label>English</ion-label>
-        <ion-radio color="main-button" slot="start" value="en"></ion-radio>
-      </ion-item>
-      <ion-item color="main-light" lines="none">
-        <ion-label>Deutsch</ion-label>
-        <ion-radio color="main-button" slot="start" value="de"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
-  <ion-title class="ion-margin-vertical">{{'SETTINGS.ingredients' | translate}}</ion-title>
-  <ion-accordion-group>
-    <ion-accordion value="first">
-      <ion-item slot="header" color="main-tertiary">
-        <ion-label>{{'SETTINGS.basic' | translate}}</ion-label>
-      </ion-item>
-      <div class="ion-padding c-list" slot="content">
-        <ion-list class="c-list">
-          <ion-item color="main-light" *ngFor="let i of openFoodFacts.getHistamineIngredients()">{{i.replace('-', ' ')}}</ion-item>
-        </ion-list>
-      </div>
-    </ion-accordion>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="main-tertiary">
-        <ion-label>{{'SETTINGS.custom' | translate}}</ion-label>
-      </ion-item>
-      <div class="ion-padding c-list" slot="content">
-        <ion-list class="c-list">
-          <ion-item color="main-light" *ngFor="let c of openFoodFacts.getCustomIngredients()">{{c}}
-            <ion-button color="danger" slot="end" (click)="showDeleteAlert(c)">
-              <ion-icon name="trash-outline" color="light"></ion-icon>
-            </ion-button>
+  <!-- Localisation -->
+  <ion-card color="main-tertiary">
+    <ion-card-header color="main-tertiary">
+      <ion-card-title>{{'SETTINGS.language' | translate}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="c-list">
+        <ion-radio-group class="c-list" value="{{languageService.getSelectedLanguage()}}" (ionChange)="this.languageService.setLanguage($event.detail.value)">
+          <ion-item color="main-tertiary">
+            <ion-label>English</ion-label>
+            <ion-radio color="dark" slot="start" value="en"></ion-radio>
           </ion-item>
-          <ion-item color="main-light" class="ion-text-center" lines="none">
-            <ion-label>
-              <ion-button color="main-button" (click)="toggleModal()">
-                <ion-icon name="add-circle-outline" color="light"></ion-icon>
-              </ion-button>
-            </ion-label>
+          <ion-item color="main-tertiary" lines="none">
+            <ion-label>Deutsch</ion-label>
+            <ion-radio color="dark" slot="start" value="de"></ion-radio>
           </ion-item>
-        </ion-list>
-      </div>
-    </ion-accordion>
-  </ion-accordion-group>
+        </ion-radio-group>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <!-- Ingredients -->
+  <ion-card color="main-tertiary">
+    <ion-card-header>
+      <ion-card-title>{{'SETTINGS.ingredients' | translate}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="main-tertiary">
+            <ion-label>{{'SETTINGS.basic' | translate}}</ion-label>
+          </ion-item>
+          <div class="ion-padding c-list" slot="content">
+            <ion-list class="c-list">
+              <ion-item color="main-light" *ngFor="let i of openFoodFacts.getHistamineIngredients()">{{i.replace('-', ' ')}}</ion-item>
+            </ion-list>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="main-tertiary">
+            <ion-label>{{'SETTINGS.custom' | translate}}</ion-label>
+          </ion-item>
+          <div class="ion-padding c-list" slot="content">
+            <ion-list class="c-list">
+              <ion-item color="main-light" *ngFor="let c of openFoodFacts.getCustomIngredients()">{{c}}
+                <ion-button color="danger" slot="end" (click)="showDeleteAlert(c)">
+                  <ion-icon name="trash-outline" color="light"></ion-icon>
+                </ion-button>
+              </ion-item>
+              <ion-item color="main-light" class="ion-text-center" lines="none">
+                <ion-label>
+                  <ion-button color="main-button" (click)="toggleModal()">
+                    <ion-icon name="add-circle-outline" color="light"></ion-icon>
+                  </ion-button>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 <ion-modal [isOpen]="isModalShowing">
   <ng-template>
     <ion-header>
       <ion-toolbar color="main" class="ion-text-center">
-        <ion-button class="ion-margin-start" color="main-button" slot="start" (click)="toggleModal()">
+        <ion-button class="ion-margin-start" color="main-tertiary" slot="start" (click)="toggleModal()">
           <ion-icon name="arrow-back-outline"></ion-icon>
         </ion-button>
         <ion-title>{{'SETTINGS.modal-title' | translate}}</ion-title>
