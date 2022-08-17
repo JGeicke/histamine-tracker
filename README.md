@@ -5,7 +5,7 @@ This application can also be used for another food intolerance by adding custom 
 
 ## Installation
 ### Android
-Todo
+Download and install the [most recent release-apk](https://github.com/JGeicke/histamine-tracker/releases) on your android device.
 
 ## How to use
 Todo
