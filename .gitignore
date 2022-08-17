@@ -38,3 +38,4 @@ resources/ios/splash
 resources/windows/icon
 resources/windows/splash
 /build_android.py
+/run_android.bat
