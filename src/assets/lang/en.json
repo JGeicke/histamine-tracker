@@ -30,7 +30,12 @@
     "histamine": "Can contain histamine!",
     "ingredient-list": "Ingredients that can contain histamine:",
     "ingredient-not-found": "Ingredients not found!",
-    "product-not-found": "Product not found!"
+    "product-not-found": "Product not found!",
+    "general": "General",
+    "advice1": "Avoid prepared meals",
+    "advice2": "Avoid spicy seasonings",
+    "advice3": "Avoid pickled vegetables",
+    "advice4": "Avoid processed meat (sausages, dried, smoked, pickled etc.) and innards"
   },
   "ABOUT-US": {
     "about": "About",

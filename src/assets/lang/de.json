@@ -30,7 +30,12 @@
     "histamine": "Kann Histamin enthalten!",
     "ingredient-list": "Zutaten, die Histamin enthalten können:",
     "ingredient-not-found": "Zutaten wurden nicht gefunden!",
-    "product-not-found": "Produkt wurde nicht gefunden!"
+    "product-not-found": "Produkt wurde nicht gefunden!",
+    "general": "Allgemein",
+    "advice1": "Vermeide Fertiggerichten/Fertigsoßen",
+    "advice2": "Vermeide scharfe Gewürze",
+    "advice3": "Vermeide eingelegtes Gemüse",
+    "advice4": "Vermeide verarbeitetes Fleisch (Würste, getrocknet, geräuchert, gepökelt usw.) und Innereien"
   },
   "ABOUT-US": {
     "about": "Über",

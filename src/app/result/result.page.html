@@ -41,5 +41,30 @@
         </p>
       </ion-col>
     </ion-row>
+    <ion-card *ngIf="!openFoodFacts.successfulScan || !openFoodFacts.ingredientsFound" color="main-secondary">
+      <ion-card-content>
+        <ion-accordion-group>
+          <ion-accordion value="first">
+            <ion-item slot="header" color="main-secondary">{{'RESULT.general' | translate}}</ion-item>
+            <div class="ion-padding c-list" slot="content">
+              <ion-list class="c-list">
+                <ion-item color="main-tertiary">
+                  • {{'RESULT.advice1' | translate}}
+                </ion-item>
+                <ion-item color="main-tertiary">
+                  • {{'RESULT.advice2' | translate}}
+                </ion-item>
+                <ion-item color="main-tertiary">
+                  • {{'RESULT.advice3' | translate}}
+                </ion-item>
+                <ion-item color="main-tertiary">
+                  • {{'RESULT.advice4' | translate}}
+                </ion-item>
+              </ion-list>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
