@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {StorageService} from './storage.service';
+
+const STORAGE_KEY = 'CUSTOM_INGREDIENTS';
 
 @Injectable({
   providedIn: 'root'
@@ -94,7 +97,10 @@ export class OpenFoodFactsService {
 
   private matchingIngredients = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+              private storage: StorageService) {
+    this.loadCustomIngredients();
+  }
 
   public getScannedProductName(){
     return this.scannedProductName === undefined ? '':this.scannedProductName;
@@ -114,6 +120,7 @@ export class OpenFoodFactsService {
 
   public addCustomIngredient(name: string){
     this.customIngredients.push(name.replace(' ', '-'));
+    this.storage.set(STORAGE_KEY, this.customIngredients);
   }
 
   public deleteCustomIngredient(name: string){
@@ -187,6 +194,14 @@ export class OpenFoodFactsService {
           resolve(1);
           return;
         });
+    });
+  }
+
+  private loadCustomIngredients(){
+    this.storage.get(STORAGE_KEY).then(val => {
+      if(val){
+        this.customIngredients = val;
+      }
     });
   }
 }
