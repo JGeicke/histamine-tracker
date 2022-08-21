@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OpenFoodFactsService} from '../services/open-food-facts.service';
 import {FormBuilder, Validators} from '@angular/forms';
 import {Platform, AlertController, ToastController} from '@ionic/angular';
@@ -18,11 +18,13 @@ export class SettingsPage implements OnInit {
 
   validationMessages = {
     name: [
-      { type: 'required', message: 'Name is required.' },
-      {type: 'pattern', message: 'Name can contain only letters and whitespace.'},
-      {type:'minlength', message: 'Name is too short.'}
+      { type: 'required', message: this.translateService.instant('SETTINGS.validation-required') },
+      {type: 'pattern', message: this.translateService.instant('SETTINGS.validation-pattern')},
+      {type:'minlength', message: this.translateService.instant('SETTINGS.validation-minlength')}
     ]
   };
+
+  private currentLanguage;
 
   constructor(public openFoodFacts: OpenFoodFactsService,
               public formBuilder: FormBuilder,
@@ -43,6 +45,9 @@ export class SettingsPage implements OnInit {
     this.ionicForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]+'), Validators.minLength(2)]],
     });
+
+    // set current language
+    this.currentLanguage = this.languageService.getSelectedLanguage();
   }
 
   addIngredient(name: string){
@@ -71,6 +76,8 @@ export class SettingsPage implements OnInit {
       this.input = '';
     }
     this.isModalShowing = !this.isModalShowing;
+
+    this.translateValidationMessages();
   }
 
   async showDeleteAlert(name: string){
@@ -100,5 +107,13 @@ export class SettingsPage implements OnInit {
     });
 
     await toast.present();
+  }
+
+  private translateValidationMessages(){
+    if(this.currentLanguage !== this.languageService.getSelectedLanguage()){
+      this.validationMessages.name[0].message = this.translateService.instant('SETTINGS.validation-required');
+      this.validationMessages.name[1].message = this.translateService.instant('SETTINGS.validation-pattern');
+      this.validationMessages.name[2].message = this.translateService.instant('SETTINGS.validation-minlength');
+    }
   }
 }

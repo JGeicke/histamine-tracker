@@ -23,7 +23,10 @@
     "warning-message-1": "Are you sure that you want to delete \"",
     "warning-message-2": "\"?",
     "warning-cancel": "Cancel",
-    "warning-confirm": "Delete"
+    "warning-confirm": "Delete",
+    "validation-required": "Name is required.",
+    "validation-pattern": "Name can contain only letters and whitespace.",
+    "validation-minlength": "Name is too short (>=2)."
   },
   "RESULT": {
     "no-histamine": "No histamine contained!",

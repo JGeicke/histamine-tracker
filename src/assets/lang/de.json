@@ -23,7 +23,10 @@
     "warning-message-1": "Soll die Zutat \"",
     "warning-message-2": "\" wirklich gelöscht werden?",
     "warning-cancel": "Abbrechen",
-    "warning-confirm": "Löschen"
+    "warning-confirm": "Löschen",
+    "validation-required": "Ein Name wird benötigt.",
+    "validation-pattern": "Der Name darf nur aus Buchstaben und Leerzeichen bestehen.",
+    "validation-minlength": "Der Name ist zu kurz (>=2). "
   },
   "RESULT": {
     "no-histamine": "Kein Histamin enthalten!",
