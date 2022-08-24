@@ -54,6 +54,48 @@
       </ion-card-header>
       <ion-card-content>
         <ion-text [innerHTML]="'PRIVACY.contact-content' | translate"></ion-text>
+        <ion-accordion-group class="ion-padding-top">
+          <ion-accordion value="contact-form">
+            <ion-item slot="header" color="main">
+              <ion-label class="ion-text-center">{{"PRIVACY.contact" | translate}}</ion-label>
+            </ion-item>
+            <div class="ion-padding c-contact ion-text-center" slot="content">
+              <form [formGroup]="contactForm" novalidate>
+                <ion-item color="main-light">
+                  <ion-label>{{"PRIVACY.contact-form-subject" | translate}}</ion-label>
+                  <ion-input placeholder="{{'PRIVACY.contact-form-subject-placeholder' | translate}}" required="true" autocorrect="on" clearInput="true" formControlName="subject"></ion-input>
+                </ion-item>
+                <ion-item color="main-light">
+                  <ion-label>{{"PRIVACY.contact-form-content" | translate}}</ion-label>
+                  <ion-textarea placeholder="{{'PRIVACY.contact-form-content-placeholder' | translate}}" rows="10" required="true" formControlName="content"></ion-textarea>
+                </ion-item>
+              </form>
+              <div class="c-validation-errors ion-margin-top">
+                <ng-container *ngFor="let validation of validationMessages.subject">
+                  <div class="c-error-message" *ngIf="contactForm.get('subject').hasError(validation.type) && (contactForm.get('subject').dirty || contactForm.get('subject').touched)">
+                    - {{ validation.message }}
+                  </div>
+                </ng-container>
+                <ng-container *ngFor="let validation of validationMessages.content">
+                  <div class="c-error-message" *ngIf="contactForm.get('content').hasError(validation.type) && (contactForm.get('content').dirty || contactForm.get('content').touched)">
+                    - {{ validation.message }}
+                  </div>
+                </ng-container>
+                <ng-container>
+                  <div class="c-error-message" *ngIf="!this.hasClient && this.clickedSendMail">
+                    - {{"PRIVACY.contact-form-no-client" | translate}}
+                  </div>
+                  <div class="c-error-message" *ngIf="!this.hasAccount && this.clickedSendMail">
+                    - {{"PRIVACY.contact-form-no-account" | translate}}
+                  </div>
+                </ng-container>
+              </div>
+              <ion-button class="ion-margin-top" color="main-button" (click)="contact(contactForm.get('subject').value, contactForm.get('content').value)" type="submit">
+                {{"PRIVACY.contact-form-send-mail" | translate}}
+              </ion-button>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
       </ion-card-content>
     </ion-card>
     <!-- contact authority -->

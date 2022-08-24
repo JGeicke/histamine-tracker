@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~13.2.2",
     "@angular/platform-browser-dynamic": "~13.2.2",
     "@angular/router": "~13.2.2",
+    "@awesome-cordova-plugins/core": "^5.44.0",
+    "@awesome-cordova-plugins/email-composer": "^5.44.0",
     "@capacitor-community/barcode-scanner": "^2.1.1",
     "@capacitor/android": "3.5.1",
     "@capacitor/app": "1.1.1",
@@ -30,6 +32,7 @@
     "@ionic/storage-angular": "^3.0.6",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "cordova-plugin-email-composer": "^0.10.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "^0.11.6"

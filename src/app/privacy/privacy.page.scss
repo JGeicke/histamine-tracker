@@ -6,3 +6,13 @@
 .c-text{
   padding: 0 1.8em;
 }
+
+.c-contact{
+  background-color: var(--ion-color-main-tertiary);
+}
+
+.c-error-message{
+  background: var(--ion-color-danger);
+  padding: 2vh 0;
+  margin: 0 2.5vw;
+}
