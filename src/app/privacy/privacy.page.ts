@@ -23,7 +23,6 @@ export class PrivacyPage implements OnInit {
     ]
   };
 
-  public hasAccount = false;
   public hasClient = false;
   public clickedSendMail = false;
 
@@ -46,13 +45,10 @@ export class PrivacyPage implements OnInit {
     // tried sending mail
     this.clickedSendMail = true;
 
-    // check for client
+    // check for email client
     await this.checkClient();
 
-    // check for account
-    await this.checkAccount();
-
-    if(this.hasAccount && this.hasClient){
+    if(this.hasClient){
       const mail = {
         to: 'jangeicke@yahoo.de',
         subject: 'Histamine-Tracker Contact: '+subject,
@@ -61,10 +57,6 @@ export class PrivacyPage implements OnInit {
 
       await this.email.open(mail);
     }
-  }
-
-  private async checkAccount(){
-    this.hasAccount = await this.email.hasAccount();
   }
 
   private async checkClient(){

@@ -66,7 +66,6 @@
     "contact-form-content": "Content: ",
     "contact-form-content-placeholder": "content",
     "contact-form-send-mail": "Send mail",
-    "contact-form-no-account": "No email account was found on this device.",
     "contact-form-no-client": "No email client was found on this device.",
     "contact-form-validation-subject-required": "Subject is required.",
     "contact-form-validation-subject-pattern": "Subject can contain only letters, whitespace and numbers.",

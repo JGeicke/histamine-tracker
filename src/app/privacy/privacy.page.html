@@ -85,9 +85,6 @@
                   <div class="c-error-message" *ngIf="!this.hasClient && this.clickedSendMail">
                     - {{"PRIVACY.contact-form-no-client" | translate}}
                   </div>
-                  <div class="c-error-message" *ngIf="!this.hasAccount && this.clickedSendMail">
-                    - {{"PRIVACY.contact-form-no-account" | translate}}
-                  </div>
                 </ng-container>
               </div>
               <ion-button class="ion-margin-top" color="main-button" (click)="contact(contactForm.get('subject').value, contactForm.get('content').value)" type="submit">
