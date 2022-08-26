@@ -9,6 +9,9 @@ import {StorageService} from './services/storage.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
+/**
+ * Base module.
+ */
 export class AppComponent {
   constructor(public openFoodFacts: OpenFoodFactsService,
               private storageService: StorageService,
@@ -16,6 +19,9 @@ export class AppComponent {
     this.languageService.setInitialAppLanguage();
   }
 
+  /**
+   * Stop the scan process after pressing the button.
+   */
   public stopScanner(){
     BarcodeScanner.stopScan();
     this.openFoodFacts.scanActive = false;

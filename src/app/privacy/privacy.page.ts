@@ -8,10 +8,20 @@ import {TranslateService} from '@ngx-translate/core';
   templateUrl: './privacy.page.html',
   styleUrls: ['./privacy.page.scss'],
 })
+
+/**
+ * Privacy policy module.
+ */
 export class PrivacyPage implements OnInit {
 
+  /**
+   * Reference to the contact form group.
+   */
   public contactForm;
 
+  /**
+   * Validation error messages displayed to the user.
+   */
   validationMessages = {
     subject: [
       { type: 'required', message: this.translateService.instant('PRIVACY.contact-form-validation-subject-required')},
@@ -23,7 +33,18 @@ export class PrivacyPage implements OnInit {
     ]
   };
 
+  /**
+   * Whether a client is installed on the device.
+   *
+   * @type boolean
+   */
   public hasClient = false;
+
+  /**
+   * Whether the user tried to send the mail
+   *
+   * @type boolean
+   */
   public clickedSendMail = false;
 
   constructor(private email: EmailComposer, public formBuilder: FormBuilder, private translateService: TranslateService) { }
@@ -38,6 +59,12 @@ export class PrivacyPage implements OnInit {
     this.clickedSendMail = false;
   }
 
+  /**
+   * Checks the form data and sends email.
+   *
+   * @param subject -  subject of email
+   * @param body - body of email
+   */
   public async contact(subject: string, body: string){
     if(!this.contactForm.valid){
       return;
@@ -59,6 +86,11 @@ export class PrivacyPage implements OnInit {
     }
   }
 
+  /**
+   * Checks if an email client is installed on the device.
+   *
+   * @private
+   */
   private async checkClient(){
     this.hasClient = await this.email.hasClient();
   }

@@ -5,6 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './about-us.page.html',
   styleUrls: ['./about-us.page.scss'],
 })
+/**
+ * Module to display the information about us.
+ */
 export class AboutUsPage implements OnInit {
 
   constructor() { }

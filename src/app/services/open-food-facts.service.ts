@@ -2,20 +2,60 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {StorageService} from './storage.service';
 
+/**
+ * Key in the local storage.
+ */
 const STORAGE_KEY = 'CUSTOM_INGREDIENTS';
 
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+ * Service to handle the histamine ingredients and communicate with the open food facts database.
+ */
 export class OpenFoodFactsService {
 
-  public scanActive;
+  /**
+   * Whether a scan is currently in progress.
+   *
+   * @type boolean
+   */
+  public scanActive: boolean;
 
-  public successfulScan;
+  /**
+   * Whether the scan was successful
+   *
+   * @type boolean
+   */
+  public successfulScan: boolean;
+
+  /**
+   * Whether the scanned product is histamine free
+   *
+   * @type boolean
+   */
   public scannedHistamineFreeProduct = false;
-  public ingredientsFound;
+
+  /**
+   * Whether the ingredients of the scanned product were found in the database.
+   */
+  public ingredientsFound: boolean;
+
+  /**
+   * Name of the recently scanned product.
+   *
+   * @private
+   */
   private scannedProductName = '';
 
+  // TODO: outsource the default histamine ingredients.
+
+  /**
+   * Temporary histamine ingredients list.
+   *
+   * @private
+   */
   private histamineFood = ['bacterial-culture',	'culture-bacterienne',	'bifidobacterium-lactis',
     'yeast-and-bacteria-cultures' ,	'bifidobacterium-bifidum',
     'alcohol',	'alcohol-vinegar', 	'cetearyl-alcohol', 	'sugar-alcohol', 	'grain-alcohol',
@@ -93,8 +133,19 @@ export class OpenFoodFactsService {
     'creme-fraiche',
     'feta',
   ];
+
+  /**
+   * Custom histamine ingredients added in settings.
+   *
+   * @private
+   */
   private customIngredients = [];
 
+  /**
+   * Matching histamine ingredients found in the recently scanned product.
+   *
+   * @private
+   */
   private matchingIngredients = [];
 
   constructor(private httpClient: HttpClient,
@@ -102,27 +153,49 @@ export class OpenFoodFactsService {
     this.loadCustomIngredients();
   }
 
+  /**
+   * Gets the name of the scanned product.
+   */
   public getScannedProductName(){
     return this.scannedProductName === undefined ? '':this.scannedProductName;
   }
 
+  /**
+   * Gets the default histamine ingredients.
+   */
   public getHistamineIngredients(){
     return this.histamineFood;
   }
 
+  /**
+   * Gets the custom histamin ingredients.
+   */
   public getCustomIngredients(){
     return this.customIngredients;
   }
 
+  /**
+   * Gets the matching ingredients of the last scan.
+   */
   public getMatchingIngredients(){
     return this.matchingIngredients;
   }
 
+  /**
+   * Adds a custom histamine ingredient.
+   *
+   * @param name - Name of the ingredient
+   */
   public addCustomIngredient(name: string){
     this.customIngredients.push(name.replace(' ', '-'));
     this.storage.set(STORAGE_KEY, this.customIngredients);
   }
 
+  /**
+   * Deletes a custom histamine ingredient.
+   *
+   * @param name - Name of the custom ingredient to be deleted.
+   */
   public deleteCustomIngredient(name: string){
     const index = this.customIngredients.indexOf(name);
     if(index > -1){
@@ -130,7 +203,11 @@ export class OpenFoodFactsService {
     }
   }
 
-
+  /**
+   * Gets the ingredients of the scanned product from the database.
+   *
+   * @param barcode -  Barcode of the scanned product
+   */
   public getIngredients(barcode: string){
     // TODO: error handling (http 404)
     return new Promise((resolve) => {
@@ -197,6 +274,11 @@ export class OpenFoodFactsService {
     });
   }
 
+  /**
+   * Loads the custom ingredients from the local storage.
+   *
+   * @private
+   */
   private loadCustomIngredients(){
     this.storage.get(STORAGE_KEY).then(val => {
       if(val){

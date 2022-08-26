@@ -8,12 +8,21 @@ const LNG_KEY = 'SELECTED_LANGUAGE';
   providedIn: 'root'
 })
 
+/**
+ * Language service that controlls the current localization of displayed text.
+ */
 export class LanguageService {
 
+  /**
+   * Selected localization.
+   */
   selected = '';
 
   constructor(private translate: TranslateService, private storageService: StorageService) { }
 
+  /**
+   * Sets the initial localization language based on the device language or the local storage.
+   */
   setInitialAppLanguage(){
     const language = this.translate.getBrowserLang();
 
@@ -28,10 +37,18 @@ export class LanguageService {
     });
   }
 
+  /**
+   * Gets the selected localization language.
+   */
   getSelectedLanguage(){
     return this.selected;
   }
 
+  /**
+   * Sets the localization language.
+   *
+   * @param lng - Localization language to select
+   */
   setLanguage(lng){
     this.translate.use(lng);
     this.selected = lng;

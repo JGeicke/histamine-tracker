@@ -10,12 +10,34 @@ import {TranslateService} from '@ngx-translate/core';
   templateUrl: './settings.page.html',
   styleUrls: ['./settings.page.scss'],
 })
+
+/**
+ * Module to customize the app and choose the localization.
+ */
 export class SettingsPage implements OnInit {
 
+  /**
+   * Whether the modal window is currently shown.
+   *
+   * @type boolean
+   */
   public isModalShowing = false;
+
+  /**
+   * Current input
+   *
+   * @type string
+   */
   public input = '';
+
+  /**
+   * Reference to the modal form group.
+   */
   public ionicForm;
 
+  /**
+   * Validation error messages displayed to the user.
+   */
   validationMessages = {
     name: [
       { type: 'required', message: this.translateService.instant('SETTINGS.validation-required') },
@@ -24,6 +46,11 @@ export class SettingsPage implements OnInit {
     ]
   };
 
+  /**
+   * Currently selected localization language.
+   *
+   * @private
+   */
   private currentLanguage;
 
   constructor(public openFoodFacts: OpenFoodFactsService,
@@ -50,6 +77,11 @@ export class SettingsPage implements OnInit {
     this.currentLanguage = this.languageService.getSelectedLanguage();
   }
 
+  /**
+   * Adds a custom ingredient to the histamine ingredient list.
+   *
+   * @param name - Name of the custom ingredient
+   */
   addIngredient(name: string){
     if(!this.ionicForm.valid){
       return;
@@ -65,12 +97,20 @@ export class SettingsPage implements OnInit {
     }
   }
 
+  /**
+   * Deletes a custom ingredient from the histamine ingredient list.
+   *
+   * @param name - Name of the custom ingredient to be deleted.
+   */
   deleteIngredient(name: string){
     this.openFoodFacts.deleteCustomIngredient(name);
     const toast = this.translateService.instant('SETTINGS.toast-delete');
     this.showSuccessfulToast(toast);
   }
 
+  /**
+   * Toggles the modal window to add custom ingredients.
+   */
   toggleModal(){
     if(this.isModalShowing){
       this.input = '';
@@ -80,6 +120,11 @@ export class SettingsPage implements OnInit {
     this.translateValidationMessages();
   }
 
+  /**
+   * Shows delete confirmation alert.
+   *
+   * @param name - Name of the custom ingredient to be deleted
+   */
   async showDeleteAlert(name: string){
     const alert = await this.alertController.create({
       header: this.translateService.instant('SETTINGS.warning'),
@@ -99,6 +144,11 @@ export class SettingsPage implements OnInit {
     await alert.present();
   }
 
+  /**
+   * Displays the successful toast.
+   *
+   * @param text - Toast message to be displayed
+   */
   async showSuccessfulToast(text: string){
     const toast = await this.toastController.create({
       message: text,
@@ -109,6 +159,11 @@ export class SettingsPage implements OnInit {
     await toast.present();
   }
 
+  /**
+   * Translates the validation messages to the currently selected localization language if needed.
+   *
+   * @private
+   */
   private translateValidationMessages(){
     if(this.currentLanguage !== this.languageService.getSelectedLanguage()){
       this.validationMessages.name[0].message = this.translateService.instant('SETTINGS.validation-required');

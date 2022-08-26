@@ -9,8 +9,15 @@ import {AlertController} from '@ionic/angular';
   templateUrl: './scan.page.html',
   styleUrls: ['./scan.page.scss'],
 })
+
+/**
+ * Module to start the product scan with.
+ */
 export class ScanPage implements OnInit, OnDestroy {
 
+  /**
+   * Result of last scan.
+   */
   result = null;
 
   constructor(public openFoodFacts: OpenFoodFactsService,
@@ -25,6 +32,9 @@ export class ScanPage implements OnInit, OnDestroy {
     BarcodeScanner.stopScan();
   }
 
+  /**
+   * Starts the scan, forwards the result to the service and navigates to the result page.
+   */
   async startScan(){
     const allowed = await this.checkPermission();
     if(allowed){
@@ -42,6 +52,9 @@ export class ScanPage implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Check if the app was granted the permission to use the device camera.
+   */
   async checkPermission(){
     return new Promise(async (resolve) =>{
       const status = await BarcodeScanner.checkPermission({force: true});
