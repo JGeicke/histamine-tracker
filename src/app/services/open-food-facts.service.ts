@@ -148,6 +148,13 @@ export class OpenFoodFactsService {
    */
   private matchingIngredients = [];
 
+  /**
+   * Constructor
+   *
+   * @ignore
+   * @param httpClient - Dependency injection to access open food facts database.
+   * @param storage - Dependency injection to access local storage.
+   */
   constructor(private httpClient: HttpClient,
               private storage: StorageService) {
     this.loadCustomIngredients();

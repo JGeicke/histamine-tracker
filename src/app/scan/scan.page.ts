@@ -20,14 +20,30 @@ export class ScanPage implements OnInit, OnDestroy {
    */
   result = null;
 
+  /**
+   * Constructor.
+   *
+   * @ignore
+   * @param openFoodFacts - Dependency injection to scan and process products
+   * @param router - Dependency injection to navigate to the result page after scanning
+   * @param alertController - Dependency injection to display alert when permissions are missing.
+   */
   constructor(public openFoodFacts: OpenFoodFactsService,
               private router: Router,
               private alertController: AlertController) { }
 
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
 
   }
 
+  /**
+   * Lifecycle hook that stops scan when the module is destroyed.
+   *
+   * @ignore
+   */
   ngOnDestroy(){
     BarcodeScanner.stopScan();
   }

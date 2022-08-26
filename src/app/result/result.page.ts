@@ -12,8 +12,17 @@ import {OpenFoodFactsService} from '../services/open-food-facts.service';
  */
 export class ResultPage implements OnInit {
 
+  /**
+   * Constructor.
+   *
+   * @ignore
+   * @param openFoodFacts - Dependency injection to display results of scan
+   */
   constructor(public openFoodFacts: OpenFoodFactsService) { }
 
+  /**
+   * @ignore
+   */
   ngOnInit() {
   }
 

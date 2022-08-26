@@ -10,8 +10,14 @@ import { Component, OnInit } from '@angular/core';
  */
 export class AboutUsPage implements OnInit {
 
+  /**
+   * @ignore
+   */
   constructor() { }
 
+  /**
+   * @ignore
+   */
   ngOnInit() {
   }
 }

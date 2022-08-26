@@ -53,6 +53,18 @@ export class SettingsPage implements OnInit {
    */
   private currentLanguage;
 
+  /**
+   * Constructor.
+   *
+   * @ignore
+   * @param openFoodFacts - Dependency injection to be able to add custom ingredients and display default ingredients.
+   * @param formBuilder - Dependency injection to controll the form to add custom ingredients
+   * @param platform - Dependency injection needed for modal windows
+   * @param alertController - Dependency injection to control alerts
+   * @param toastController - Dependency injection to control toasts
+   * @param languageService - Dependency injection to access language service for localization
+   * @param translateService - Dependency injection to translate displayed text according to localization
+   */
   constructor(public openFoodFacts: OpenFoodFactsService,
               public formBuilder: FormBuilder,
               public platform: Platform,
@@ -62,6 +74,11 @@ export class SettingsPage implements OnInit {
               private translateService: TranslateService) {
   }
 
+  /**
+   * Lifecycle that sets modal back button behaviour and builds the form.
+   *
+   * @ignore
+   */
   ngOnInit() {
     // handle user pressing back button
     this.platform.backButton.subscribeWithPriority(9999, () => {

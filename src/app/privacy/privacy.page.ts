@@ -47,8 +47,21 @@ export class PrivacyPage implements OnInit {
    */
   public clickedSendMail = false;
 
+  /**
+   * Constructor.
+   *
+   * @ignore
+   * @param email - Dependency injection to access email composer.
+   * @param formBuilder - Dependency injection to control form.
+   * @param translateService - Dependency injection to translate displayed text according to localization.
+   */
   constructor(private email: EmailComposer, public formBuilder: FormBuilder, private translateService: TranslateService) { }
 
+  /**
+   * Lifecycle hook that builds the contact form.
+   *
+   * @ignore
+   */
   ngOnInit() {
     // form check
     this.contactForm = this.formBuilder.group({

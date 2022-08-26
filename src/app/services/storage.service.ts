@@ -9,6 +9,12 @@ import {Storage} from '@ionic/storage-angular';
  */
 export class StorageService {
 
+  /**
+   * Constructor
+   *
+   * @ignore
+   * @param storage - Dependency injection to access local storage.
+   */
   constructor(private storage: Storage) {
     this.init();
   }
