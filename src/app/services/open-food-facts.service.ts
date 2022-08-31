@@ -49,90 +49,12 @@ export class OpenFoodFactsService {
    */
   private scannedProductName = '';
 
-  // TODO: outsource the default histamine ingredients.
-
   /**
    * Temporary histamine ingredients list.
    *
    * @private
    */
-  private histamineFood = ['bacterial-culture',	'culture-bacterienne',	'bifidobacterium-lactis',
-    'yeast-and-bacteria-cultures' ,	'bifidobacterium-bifidum',
-    'alcohol',	'alcohol-vinegar', 	'cetearyl-alcohol', 	'sugar-alcohol', 	'grain-alcohol',
-    'vinegar',
-    'yeast',
-    'soy-milk',
-    'theobroma-cacao',
-    'nettle',
-    'cocoa',
-    'chocolate',
-    'carob-seeds',	'carob-seed-flour', 	'carob-bean',
-    'soy-sauce',
-    'glutamate-monosodique', 	'flavour-enhancer',
-    'strawberry',
-    'raspberry',
-    'lemon',
-    'orange',
-    'tangerine',	'clementine',
-    'grapefruit',
-    'lime',
-    'banana',
-    'pineapple',
-    'kiwi',
-    'pear',
-    'papaya',
-    'guava',
-    'nut',
-    'sauerkraut',
-    'spinach',
-    'tomato', 	'ketchup',
-    'aubergine',
-    'avocado',
-    'olives',
-    'lentils',
-    'beans',
-    'soya-lecithin',
-    'cep',
-    'morels',
-    'hard-cheese',
-    'soft-cheese',
-    'pasteurized-processed-cheese',
-    'blue-cheese ',
-    'mold-inhibitor',
-    'tuna',
-    'mackerel',
-    'herring',
-    'sardine',
-    'anchovy',
-    'mahi-mahi',
-    'mussel',
-    'lobster',
-    'crab',
-    'shrimp', 	'prawn',
-    'sausage',
-    'salami',
-    'liver',
-    'tongue',
-    'heart',
-    'rice-milk',
-    'oat-milk',
-    'black-tea',
-    'coffee',
-    'green-tea',
-    'espresso',
-    'walnut-oil',
-    'malt',
-    'wheat-germ',
-    'mushroom',
-    'raw-milk',
-    'yogurt',
-    'kefir-ferments', 	'kefir',
-    'soured-milk ',
-    'buttermilk',
-    'sour-cream',
-    'creme-fraiche',
-    'feta',
-  ];
+  private histamineFood: string[] = [];
 
   /**
    * Custom histamine ingredients added in settings.
@@ -157,6 +79,7 @@ export class OpenFoodFactsService {
    */
   constructor(private httpClient: HttpClient,
               private storage: StorageService) {
+    this.loadDefaultIngredients();
     this.loadCustomIngredients();
   }
 
@@ -286,11 +209,22 @@ export class OpenFoodFactsService {
    *
    * @private
    */
-  private loadCustomIngredients(){
+  private loadCustomIngredients(): void{
     this.storage.get(STORAGE_KEY).then(val => {
       if(val){
         this.customIngredients = val;
       }
+    });
+  }
+
+  /**
+   * Loads the default ingredients from an local json file.
+   *
+   * @private
+   */
+  private loadDefaultIngredients(): void{
+    fetch('../../assets/data/ingredients.json').then(res => res.json()).then(json => {
+      this.histamineFood = json.ingredients;
     });
   }
 }
