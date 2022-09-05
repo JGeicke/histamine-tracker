@@ -23,7 +23,10 @@
     "warning-message-1": "Soll die Zutat \"",
     "warning-message-2": "\" wirklich gelöscht werden?",
     "warning-cancel": "Abbrechen",
-    "warning-confirm": "Löschen"
+    "warning-confirm": "Löschen",
+    "validation-required": "Ein Name wird benötigt.",
+    "validation-pattern": "Der Name darf nur aus Buchstaben und Leerzeichen bestehen.",
+    "validation-minlength": "Der Name ist zu kurz (>=2). "
   },
   "RESULT": {
     "no-histamine": "Kein Histamin enthalten!",
@@ -57,7 +60,17 @@
     "changes": "Änderungen an dieser Datenschutzbestimmung",
     "changes-content": "    <p class=\"c-text\">Die Datenschutzbestimmung der Histamine Tracker App wird regelmäßig geprüft und aktualisiert. Dabei wird jede Aktualisierung entsprechend auf dieser Seite angegeben. Die letzte Aktualisierung der Datenschutzbestimmung fand am 23.Juni 2022 statt.</p>\n",
     "contact": "Kontakt",
-    "contact-content": "<p class=\"c-text\">Bei Fragen zur Datenschutzbestimmung des Histamine Tracker, kontaktieren Sie mich bitte per E-Mail.</p><br>\n\n    Meine E-Mail: <a href=\"mailto:jangeicke@yahoo.de\">jangeicke@yahoo.de</a>",
+    "contact-content": "<p class=\"c-text\">Bei Fragen zur Datenschutzbestimmung des Histamine Tracker, kontaktieren Sie mich bitte über das folgende Formular.</p><br>\n\n",
+    "contact-form-subject": "Betreff: ",
+    "contact-form-subject-placeholder": "betreff",
+    "contact-form-content": "Inhalt: ",
+    "contact-form-content-placeholder": "inhalt",
+    "contact-form-send-mail": "E-Mail senden",
+    "contact-form-no-client": "Kein E-Mail Client konnte auf diesem Gerät gefunden werden.",
+    "contact-form-validation-subject-required": "Ein Betreff wird benötigt.",
+    "contact-form-validation-subject-pattern": "Der Betreff darf nur aus Buchstaben, Zahlen und Leerzeichen bestehen.",
+    "contact-form-validation-subject-minlength": "Der Betreff ist zu kurz (>=2).",
+    "contact-form-validation-content-required": "Ein Inhalt wird benötigt.",
     "contact-authority": "Kontakt zu entsprechenden Authoritäten",
     "contact-authority-content": "<p class=\"c-text\">Sollten Sie eine Beschwerde aufgegeben wollen oder Sie das Gefühl haben, dass ich auf Ihre Bedenken nicht zufriedenstellend eingegangen bin,\n      kontaktieren Sie bitte die hessische Datenschutzaufsichtsbehörde.</p>\n    <p class=\"c-text\">\n",
     "contact-authority-address": "<p class=\"c-text\">Der Hessische Beauftragte für Datenschutz und Informationsfreiheit<br>Postfach 3163<br>65021 Wiesbaden<br>Telefon: +49 611 1408 - 0</p>"

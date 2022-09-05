@@ -1,0 +1,1217 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>histamin-tracker documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">histamin-tracker documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  SettingsPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/settings/settings.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-settings</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./settings.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./settings.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#currentLanguage" >currentLanguage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#input" >input</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ionicForm" >ionicForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isModalShowing" >isModalShowing</a>
+                            </li>
+                            <li>
+                                <a href="#validationMessages" >validationMessages</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addIngredient" >addIngredient</a>
+                            </li>
+                            <li>
+                                <a href="#deleteIngredient" >deleteIngredient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#showDeleteAlert" >showDeleteAlert</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#showSuccessfulToast" >showSuccessfulToast</a>
+                            </li>
+                            <li>
+                                <a href="#toggleModal" >toggleModal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#translateValidationMessages" >translateValidationMessages</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addIngredient"></a>
+                    <span class="name">
+                        <span ><b>addIngredient</b></span>
+                        <a href="#addIngredient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addIngredient(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/settings/settings.page.ts:102</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds a custom ingredient to the histamine ingredient list.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Name of the custom ingredient</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteIngredient"></a>
+                    <span class="name">
+                        <span ><b>deleteIngredient</b></span>
+                        <a href="#deleteIngredient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteIngredient(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/settings/settings.page.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes a custom ingredient from the histamine ingredient list.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Name of the custom ingredient to be deleted.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showDeleteAlert"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>showDeleteAlert</b></span>
+                        <a href="#showDeleteAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showDeleteAlert(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/app/settings/settings.page.ts:145</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Shows delete confirmation alert.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Name of the custom ingredient to be deleted</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showSuccessfulToast"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>showSuccessfulToast</b></span>
+                        <a href="#showSuccessfulToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showSuccessfulToast(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">src/app/settings/settings.page.ts:169</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Displays the successful toast.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>text</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Toast message to be displayed</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleModal"></a>
+                    <span class="name">
+                        <span ><b>toggleModal</b></span>
+                        <a href="#toggleModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleModal()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/settings/settings.page.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Toggles the modal window to add custom ingredients.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="translateValidationMessages"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>translateValidationMessages</b></span>
+                        <a href="#translateValidationMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>translateValidationMessages()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">src/app/settings/settings.page.ts:184</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Translates the validation messages to the currently selected localization language if needed.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentLanguage"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>currentLanguage</b></span>
+                        <a href="#currentLanguage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/settings/settings.page.ts:54</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Currently selected localization language.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="input"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>input</b></span>
+                        <a href="#input"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/settings/settings.page.ts:31</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Current input</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ionicForm"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>ionicForm</b></span>
+                        <a href="#ionicForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/settings/settings.page.ts:36</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Reference to the modal form group.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isModalShowing"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isModalShowing</b></span>
+                        <a href="#isModalShowing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/settings/settings.page.ts:24</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Whether the modal window is currently shown.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validationMessages"></a>
+                    <span class="name">
+                        <span ><b>validationMessages</b></span>
+                        <a href="#validationMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    name: [
+      { type: &#x27;required&#x27;, message: this.translateService.instant(&#x27;SETTINGS.validation-required&#x27;) },
+      {type: &#x27;pattern&#x27;, message: this.translateService.instant(&#x27;SETTINGS.validation-pattern&#x27;)},
+      {type:&#x27;minlength&#x27;, message: this.translateService.instant(&#x27;SETTINGS.validation-minlength&#x27;)}
+    ]
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/settings/settings.page.ts:41</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Validation error messages displayed to the user.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {OpenFoodFactsService} from &#x27;../services/open-food-facts.service&#x27;;
+import {FormBuilder, Validators} from &#x27;@angular/forms&#x27;;
+import {Platform, AlertController, ToastController} from &#x27;@ionic/angular&#x27;;
+import {LanguageService} from &#x27;../services/language.service&#x27;;
+import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
+
+@Component({
+  selector: &#x27;app-settings&#x27;,
+  templateUrl: &#x27;./settings.page.html&#x27;,
+  styleUrls: [&#x27;./settings.page.scss&#x27;],
+})
+
+/**
+ * Module to customize the app and choose the localization.
+ */
+export class SettingsPage implements OnInit {
+
+  /**
+   * Whether the modal window is currently shown.
+   *
+   * @type boolean
+   */
+  public isModalShowing &#x3D; false;
+
+  /**
+   * Current input
+   *
+   * @type string
+   */
+  public input &#x3D; &#x27;&#x27;;
+
+  /**
+   * Reference to the modal form group.
+   */
+  public ionicForm;
+
+  /**
+   * Validation error messages displayed to the user.
+   */
+  validationMessages &#x3D; {
+    name: [
+      { type: &#x27;required&#x27;, message: this.translateService.instant(&#x27;SETTINGS.validation-required&#x27;) },
+      {type: &#x27;pattern&#x27;, message: this.translateService.instant(&#x27;SETTINGS.validation-pattern&#x27;)},
+      {type:&#x27;minlength&#x27;, message: this.translateService.instant(&#x27;SETTINGS.validation-minlength&#x27;)}
+    ]
+  };
+
+  /**
+   * Currently selected localization language.
+   *
+   * @private
+   */
+  private currentLanguage;
+
+  /**
+   * Constructor.
+   *
+   * @ignore
+   * @param openFoodFacts - Dependency injection to be able to add custom ingredients and display default ingredients.
+   * @param formBuilder - Dependency injection to controll the form to add custom ingredients
+   * @param platform - Dependency injection needed for modal windows
+   * @param alertController - Dependency injection to control alerts
+   * @param toastController - Dependency injection to control toasts
+   * @param languageService - Dependency injection to access language service for localization
+   * @param translateService - Dependency injection to translate displayed text according to localization
+   */
+  constructor(public openFoodFacts: OpenFoodFactsService,
+              public formBuilder: FormBuilder,
+              public platform: Platform,
+              public alertController: AlertController,
+              public toastController: ToastController,
+              public languageService: LanguageService,
+              private translateService: TranslateService) {
+  }
+
+  /**
+   * Lifecycle that sets modal back button behaviour and builds the form.
+   *
+   * @ignore
+   */
+  ngOnInit() {
+    // handle user pressing back button
+    this.platform.backButton.subscribeWithPriority(9999, () &#x3D;&gt; {
+      this.toggleModal();
+    });
+
+    // form check
+    this.ionicForm &#x3D; this.formBuilder.group({
+      name: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;[a-zA-Z ]+&#x27;), Validators.minLength(2)]],
+    });
+
+    // set current language
+    this.currentLanguage &#x3D; this.languageService.getSelectedLanguage();
+  }
+
+  /**
+   * Adds a custom ingredient to the histamine ingredient list.
+   *
+   * @param name - Name of the custom ingredient
+   */
+  addIngredient(name: string){
+    if(!this.ionicForm.valid){
+      return;
+    } else {
+      this.ionicForm.reset();
+
+      // remove multiple whitespaces from string before adding it
+      this.openFoodFacts.addCustomIngredient(name.replace(/\s+/g, &#x27; &#x27;));
+      this.toggleModal();
+      const part1 &#x3D; this.translateService.instant(&#x27;SETTINGS.toast-add-1&#x27;);
+      const part2 &#x3D; this.translateService.instant(&#x27;SETTINGS.toast-add-2&#x27;);
+      this.showSuccessfulToast(part1+name+part2);
+    }
+  }
+
+  /**
+   * Deletes a custom ingredient from the histamine ingredient list.
+   *
+   * @param name - Name of the custom ingredient to be deleted.
+   */
+  deleteIngredient(name: string){
+    this.openFoodFacts.deleteCustomIngredient(name);
+    const toast &#x3D; this.translateService.instant(&#x27;SETTINGS.toast-delete&#x27;);
+    this.showSuccessfulToast(toast);
+  }
+
+  /**
+   * Toggles the modal window to add custom ingredients.
+   */
+  toggleModal(){
+    if(this.isModalShowing){
+      this.input &#x3D; &#x27;&#x27;;
+    }
+    this.isModalShowing &#x3D; !this.isModalShowing;
+
+    this.translateValidationMessages();
+  }
+
+  /**
+   * Shows delete confirmation alert.
+   *
+   * @param name - Name of the custom ingredient to be deleted
+   */
+  async showDeleteAlert(name: string){
+    const alert &#x3D; await this.alertController.create({
+      header: this.translateService.instant(&#x27;SETTINGS.warning&#x27;),
+      message: this.translateService.instant(&#x27;SETTINGS.warning-message-1&#x27;)
+        + name + this.translateService.instant(&#x27;SETTINGS.warning-message-2&#x27;),
+      buttons: [{
+        text: this.translateService.instant(&#x27;SETTINGS.warning-cancel&#x27;),
+        role: &#x27;cancel&#x27;,
+      },
+      {
+        text: this.translateService.instant(&#x27;SETTINGS.warning-confirm&#x27;),
+        role: &#x27;confirm&#x27;,
+        cssClass: &#x27;c-alert-button-delete&#x27;,
+        handler: () &#x3D;&gt; this.deleteIngredient(name)
+      }]
+    });
+    await alert.present();
+  }
+
+  /**
+   * Displays the successful toast.
+   *
+   * @param text - Toast message to be displayed
+   */
+  async showSuccessfulToast(text: string){
+    const toast &#x3D; await this.toastController.create({
+      message: text,
+      duration: 2000,
+      color: &#x27;success&#x27;
+    });
+
+    await toast.present();
+  }
+
+  /**
+   * Translates the validation messages to the currently selected localization language if needed.
+   *
+   * @private
+   */
+  private translateValidationMessages(){
+    if(this.currentLanguage !&#x3D;&#x3D; this.languageService.getSelectedLanguage()){
+      this.validationMessages.name[0].message &#x3D; this.translateService.instant(&#x27;SETTINGS.validation-required&#x27;);
+      this.validationMessages.name[1].message &#x3D; this.translateService.instant(&#x27;SETTINGS.validation-pattern&#x27;);
+      this.validationMessages.name[2].message &#x3D; this.translateService.instant(&#x27;SETTINGS.validation-minlength&#x27;);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-toolbar color&#x3D;&quot;main-secondary&quot;&gt;
+    &lt;ion-title size&#x3D;&quot;large&quot;&gt;{{&#x27;SETTINGS.title&#x27; | translate}}&lt;/ion-title&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+&lt;ion-content fullscreen&#x3D;&quot;true&quot; class&#x3D;&quot;ion-justify-content-center c-setting-content&quot;&gt;
+  &lt;!-- Localisation --&gt;
+  &lt;ion-card color&#x3D;&quot;main-tertiary&quot;&gt;
+    &lt;ion-card-header color&#x3D;&quot;main-tertiary&quot;&gt;
+      &lt;ion-card-title&gt;{{&#x27;SETTINGS.language&#x27; | translate}}&lt;/ion-card-title&gt;
+    &lt;/ion-card-header&gt;
+    &lt;ion-card-content&gt;
+      &lt;ion-list class&#x3D;&quot;c-list&quot;&gt;
+        &lt;ion-radio-group class&#x3D;&quot;c-list&quot; value&#x3D;&quot;{{languageService.getSelectedLanguage()}}&quot; (ionChange)&#x3D;&quot;this.languageService.setLanguage($event.detail.value)&quot;&gt;
+          &lt;ion-item color&#x3D;&quot;main-tertiary&quot;&gt;
+            &lt;ion-label&gt;English&lt;/ion-label&gt;
+            &lt;ion-radio color&#x3D;&quot;dark&quot; slot&#x3D;&quot;start&quot; value&#x3D;&quot;en&quot;&gt;&lt;/ion-radio&gt;
+          &lt;/ion-item&gt;
+          &lt;ion-item color&#x3D;&quot;main-tertiary&quot; lines&#x3D;&quot;none&quot;&gt;
+            &lt;ion-label&gt;Deutsch&lt;/ion-label&gt;
+            &lt;ion-radio color&#x3D;&quot;dark&quot; slot&#x3D;&quot;start&quot; value&#x3D;&quot;de&quot;&gt;&lt;/ion-radio&gt;
+          &lt;/ion-item&gt;
+        &lt;/ion-radio-group&gt;
+      &lt;/ion-list&gt;
+    &lt;/ion-card-content&gt;
+  &lt;/ion-card&gt;
+  &lt;!-- Ingredients --&gt;
+  &lt;ion-card color&#x3D;&quot;main-tertiary&quot;&gt;
+    &lt;ion-card-header&gt;
+      &lt;ion-card-title&gt;{{&#x27;SETTINGS.ingredients&#x27; | translate}}&lt;/ion-card-title&gt;
+    &lt;/ion-card-header&gt;
+    &lt;ion-card-content&gt;
+      &lt;ion-accordion-group&gt;
+        &lt;ion-accordion value&#x3D;&quot;first&quot;&gt;
+          &lt;ion-item slot&#x3D;&quot;header&quot; color&#x3D;&quot;main-tertiary&quot;&gt;
+            &lt;ion-label&gt;{{&#x27;SETTINGS.basic&#x27; | translate}}&lt;/ion-label&gt;
+          &lt;/ion-item&gt;
+          &lt;div class&#x3D;&quot;ion-padding c-list&quot; slot&#x3D;&quot;content&quot;&gt;
+            &lt;ion-list class&#x3D;&quot;c-list&quot;&gt;
+              &lt;ion-item color&#x3D;&quot;main-light&quot; *ngFor&#x3D;&quot;let i of openFoodFacts.getHistamineIngredients()&quot;&gt;{{i.replace(&#x27;-&#x27;, &#x27; &#x27;)}}&lt;/ion-item&gt;
+            &lt;/ion-list&gt;
+          &lt;/div&gt;
+        &lt;/ion-accordion&gt;
+        &lt;ion-accordion value&#x3D;&quot;second&quot;&gt;
+          &lt;ion-item slot&#x3D;&quot;header&quot; color&#x3D;&quot;main-tertiary&quot;&gt;
+            &lt;ion-label&gt;{{&#x27;SETTINGS.custom&#x27; | translate}}&lt;/ion-label&gt;
+          &lt;/ion-item&gt;
+          &lt;div class&#x3D;&quot;ion-padding c-list&quot; slot&#x3D;&quot;content&quot;&gt;
+            &lt;ion-list class&#x3D;&quot;c-list&quot;&gt;
+              &lt;ion-item color&#x3D;&quot;main-light&quot; *ngFor&#x3D;&quot;let c of openFoodFacts.getCustomIngredients()&quot;&gt;{{c}}
+                &lt;ion-button color&#x3D;&quot;danger&quot; slot&#x3D;&quot;end&quot; (click)&#x3D;&quot;showDeleteAlert(c)&quot;&gt;
+                  &lt;ion-icon name&#x3D;&quot;trash-outline&quot; color&#x3D;&quot;light&quot;&gt;&lt;/ion-icon&gt;
+                &lt;/ion-button&gt;
+              &lt;/ion-item&gt;
+              &lt;ion-item color&#x3D;&quot;main-light&quot; class&#x3D;&quot;ion-text-center&quot; lines&#x3D;&quot;none&quot;&gt;
+                &lt;ion-label&gt;
+                  &lt;ion-button color&#x3D;&quot;main-button&quot; (click)&#x3D;&quot;toggleModal()&quot;&gt;
+                    &lt;ion-icon name&#x3D;&quot;add-circle-outline&quot; color&#x3D;&quot;light&quot;&gt;&lt;/ion-icon&gt;
+                  &lt;/ion-button&gt;
+                &lt;/ion-label&gt;
+              &lt;/ion-item&gt;
+            &lt;/ion-list&gt;
+          &lt;/div&gt;
+        &lt;/ion-accordion&gt;
+      &lt;/ion-accordion-group&gt;
+    &lt;/ion-card-content&gt;
+  &lt;/ion-card&gt;
+&lt;/ion-content&gt;
+&lt;ion-modal [isOpen]&#x3D;&quot;isModalShowing&quot;&gt;
+  &lt;ng-template&gt;
+    &lt;ion-header&gt;
+      &lt;ion-toolbar color&#x3D;&quot;main&quot; class&#x3D;&quot;ion-text-center&quot;&gt;
+        &lt;ion-button class&#x3D;&quot;ion-margin-start&quot; color&#x3D;&quot;main-tertiary&quot; slot&#x3D;&quot;start&quot; (click)&#x3D;&quot;toggleModal()&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;arrow-back-outline&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/ion-button&gt;
+        &lt;ion-title&gt;{{&#x27;SETTINGS.modal-title&#x27; | translate}}&lt;/ion-title&gt;
+      &lt;/ion-toolbar&gt;
+    &lt;/ion-header&gt;
+    &lt;ion-content color&#x3D;&quot;main-secondary&quot; class&#x3D;&quot;ion-justify-content-center ion-text-center&quot;&gt;
+      &lt;form [formGroup]&#x3D;&quot;ionicForm&quot; novalidate&gt;
+        &lt;ion-item color&#x3D;&quot;main-light&quot;&gt;
+          &lt;ion-label&gt;Name:&lt;/ion-label&gt;
+          &lt;ion-input placeholder&#x3D;&quot;{{&#x27;SETTINGS.modal-example&#x27; | translate}}&quot; required&#x3D;&quot;true&quot; autocorrect&#x3D;&quot;on&quot; clearInput&#x3D;&quot;true&quot; formControlName&#x3D;&quot;name&quot;&gt;&lt;/ion-input&gt;
+        &lt;/ion-item&gt;
+      &lt;/form&gt;
+      &lt;div class&#x3D;&quot;c-validation-errors&quot;&gt;
+        &lt;ng-container *ngFor&#x3D;&quot;let validation of validationMessages.name&quot;&gt;
+          &lt;div class&#x3D;&quot;c-error-message&quot; *ngIf&#x3D;&quot;ionicForm.get(&#x27;name&#x27;).hasError(validation.type) &amp;&amp; (ionicForm.get(&#x27;name&#x27;).dirty || ionicForm.get(&#x27;name&#x27;).touched)&quot;&gt;
+            - {{ validation.message }}
+          &lt;/div&gt;
+        &lt;/ng-container&gt;
+      &lt;/div&gt;
+      &lt;ion-button color&#x3D;&quot;main-button&quot; (click)&#x3D;&quot;addIngredient(this.ionicForm.get(&#x27;name&#x27;).value)&quot; type&#x3D;&quot;submit&quot;&gt;
+        {{&#x27;SETTINGS.modal-save&#x27; | translate}}
+      &lt;/ion-button&gt;
+    &lt;/ion-content&gt;
+  &lt;/ng-template&gt;
+&lt;/ion-modal&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./settings.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.c-setting-content{
+  overflow-y: scroll;
+}
+
+.c-list{
+  padding-bottom: 5vh;
+  background-color: var(--ion-color-main-tertiary);
+}
+
+.c-validation-errors{
+  margin: 5vh 0;
+}
+
+.c-error-message{
+  background: var(--ion-color-danger);
+  padding: 2vh 0;
+  margin: 0 2.5vw;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar color="main-secondary">    <ion-title size="large">{{\'SETTINGS.title\' | translate}}</ion-title>  </ion-toolbar></ion-header><ion-content fullscreen="true" class="ion-justify-content-center c-setting-content">  <!-- Localisation -->  <ion-card color="main-tertiary">    <ion-card-header color="main-tertiary">      <ion-card-title>{{\'SETTINGS.language\' | translate}}</ion-card-title>    </ion-card-header>    <ion-card-content>      <ion-list class="c-list">        <ion-radio-group class="c-list" value="{{languageService.getSelectedLanguage()}}" (ionChange)="this.languageService.setLanguage($event.detail.value)">          <ion-item color="main-tertiary">            <ion-label>English</ion-label>            <ion-radio color="dark" slot="start" value="en"></ion-radio>          </ion-item>          <ion-item color="main-tertiary" lines="none">            <ion-label>Deutsch</ion-label>            <ion-radio color="dark" slot="start" value="de"></ion-radio>          </ion-item>        </ion-radio-group>      </ion-list>    </ion-card-content>  </ion-card>  <!-- Ingredients -->  <ion-card color="main-tertiary">    <ion-card-header>      <ion-card-title>{{\'SETTINGS.ingredients\' | translate}}</ion-card-title>    </ion-card-header>    <ion-card-content>      <ion-accordion-group>        <ion-accordion value="first">          <ion-item slot="header" color="main-tertiary">            <ion-label>{{\'SETTINGS.basic\' | translate}}</ion-label>          </ion-item>          <div class="ion-padding c-list" slot="content">            <ion-list class="c-list">              <ion-item color="main-light" *ngFor="let i of openFoodFacts.getHistamineIngredients()">{{i.replace(\'-\', \' \')}}</ion-item>            </ion-list>          </div>        </ion-accordion>        <ion-accordion value="second">          <ion-item slot="header" color="main-tertiary">            <ion-label>{{\'SETTINGS.custom\' | translate}}</ion-label>          </ion-item>          <div class="ion-padding c-list" slot="content">            <ion-list class="c-list">              <ion-item color="main-light" *ngFor="let c of openFoodFacts.getCustomIngredients()">{{c}}                <ion-button color="danger" slot="end" (click)="showDeleteAlert(c)">                  <ion-icon name="trash-outline" color="light"></ion-icon>                </ion-button>              </ion-item>              <ion-item color="main-light" class="ion-text-center" lines="none">                <ion-label>                  <ion-button color="main-button" (click)="toggleModal()">                    <ion-icon name="add-circle-outline" color="light"></ion-icon>                  </ion-button>                </ion-label>              </ion-item>            </ion-list>          </div>        </ion-accordion>      </ion-accordion-group>    </ion-card-content>  </ion-card></ion-content><ion-modal [isOpen]="isModalShowing">  <ng-template>    <ion-header>      <ion-toolbar color="main" class="ion-text-center">        <ion-button class="ion-margin-start" color="main-tertiary" slot="start" (click)="toggleModal()">          <ion-icon name="arrow-back-outline"></ion-icon>        </ion-button>        <ion-title>{{\'SETTINGS.modal-title\' | translate}}</ion-title>      </ion-toolbar>    </ion-header>    <ion-content color="main-secondary" class="ion-justify-content-center ion-text-center">      <form [formGroup]="ionicForm" novalidate>        <ion-item color="main-light">          <ion-label>Name:</ion-label>          <ion-input placeholder="{{\'SETTINGS.modal-example\' | translate}}" required="true" autocorrect="on" clearInput="true" formControlName="name"></ion-input>        </ion-item>      </form>      <div class="c-validation-errors">        <ng-container *ngFor="let validation of validationMessages.name">          <div class="c-error-message" *ngIf="ionicForm.get(\'name\').hasError(validation.type) && (ionicForm.get(\'name\').dirty || ionicForm.get(\'name\').touched)">            - {{ validation.message }}          </div>        </ng-container>      </div>      <ion-button color="main-button" (click)="addIngredient(this.ionicForm.get(\'name\').value)" type="submit">        {{\'SETTINGS.modal-save\' | translate}}      </ion-button>    </ion-content>  </ng-template></ion-modal></div>'
+    var COMPONENTS = [{'name': 'AboutUsPage', 'selector': 'app-about-us'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'PrivacyPage', 'selector': 'app-privacy'},{'name': 'ResultPage', 'selector': 'app-result'},{'name': 'ScanPage', 'selector': 'app-scan'},{'name': 'SettingsPage', 'selector': 'app-settings'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SettingsPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SettingsPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

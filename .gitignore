@@ -39,3 +39,4 @@ resources/windows/icon
 resources/windows/splash
 /build_android.py
 /run_android.py
+/create_documentation.py
