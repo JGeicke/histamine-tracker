@@ -218,7 +218,7 @@ export class OpenFoodFactsService {
   }
 
   /**
-   * Loads the default ingredients from an local json file.
+   * Loads the default ingredients from a local json file.
    *
    * @private
    */
