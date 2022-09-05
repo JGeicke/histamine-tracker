@@ -15,6 +15,9 @@ Todo
 - [Capacitor](https://capacitorjs.com/)
 - [Angular](https://angular.io/)
 
+## Documentation
+The documentation of the app can be found [here.](https://jgeicke.github.io/histamine-tracker/index.html)
+
 ## Credit
 - [Information about histamine intolerance](https://www.histaminintoleranz.ch/downloads/SIGHI-Leaflet_HistamineEliminationDiet.pdf)
 - [OpenFoodFacts database for the ingredients](https://openfoodfacts.org/)
